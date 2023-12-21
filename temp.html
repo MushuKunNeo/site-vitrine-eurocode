@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html oncopy="return false" oncut="return false" lang="en" prefix="og: https://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="theme-color" content="#eee">
+        <link rel="manifest" crossorigin="use-credentials" href="/manifest.webmanifest">
+        <link rel="icon" type="image/png" href="/static/icons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/static/icons/favicon-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="/static/icons/favicon-512x512.png" sizes="512x512">
+        <link rel="apple-touch-icon" href="/static/icons/favicon-180x180.png" sizes="180x180">
+        <link rel="preconnect" href="https://ajax.googleapis.com">
+        <link rel="preconnect" href="https://cdn.jsdelivr.net">
+        <link rel="preconnect" href="https://kit-free.fontawesome.com">
+        <link rel="preload" href="../static/gen/fonts/KFOlCnqEu92Fr1MmSU5fChc4EsB.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link rel="preload" type="text/css" href="/static/gen/global.css?aebecd19" as="style">
+        <link rel="stylesheet" type="text/css" href="/static/gen/global.css?aebecd19">
+        <title translate="no">Information on structural calculations | Eurocodes Tools</title>
+        <meta name="description" content="Are you looking for information on structural calculations, building design methods or software? Visit eurocodes-tools.com">
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "SoftwareApplication",
+                "name": "Eurocodes Tools",
+                "url": "https://eurocodes-tools.com/en/",
+                "author": {
+                    "@type": "Person",
+                    "name": "Stéphane PERRIN"
+                },
+                "applicationCategory": "structural analysis",
+                "image": "https://eurocodes-tools.com/static/icons/favicon-512x512.png",
+                "operatingSystem": "Web",
+                "requirements": "Chrome / Edge / Firefox / ...",
+                "screenshot": "https://eurocodes-tools.com/static/img/screenshot.webp",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0"
+                }
+            }</script>
+    </head>
+    <body>
+        <div class="phone"></div>
+        <div class="message">Please rotate your device! </div>
+        <header>
+            <div class="scale no-print">
+                <span class="main_menu_icon" title="Main menu" onclick="openMainNav()">
+                    <i class="fas fa-bars fa-2x"></i>
+                </span>
+            </div>
+            <div id="mainNav" class="overlay">
+                <button href="javascript:void(0)" class="closebtn" onclick="closeMainNav()" style="background: none;border: none; padding: 0;">&times;</button>
+                <div class="overlay-content">
+                    <div class="title_as_h1" style="margin-top: 0.5em">Main</div>
+                    <div style="text-align: left; margin-left: 2em">
+                        <a href="/en/" title="Back to the main page !">
+                            <i class="fas fa-home"></i>
+                            Home
+                        </a>
+                        <br>
+                        <a href="/en/videos" title="Discover our structural calculation software in videos !">
+                            <i class="fas fa-film" style="margin-right: 0.5em"></i>
+                            Watch the videos
+                        </a>
+                        <br>
+                        <a href="/en/discussions" title="If you don't need help, maybe you can help someone !">
+                            <i class="fas fa-comments" style="margin-right: 0.5em"></i>
+                            See discussions or ask a question
+                        </a>
+                        <br>
+                        <button class="install-application" style="background: none;border: none; padding: 0;" title="More easily accessible and clearer !">
+                            <i class="fas fa-download" style="margin-right: 0.5em;"></i>
+                            Install the application
+                        </button>
+                        <script>
+                            if ('serviceWorker'in navigator) {
+                                // Register a service worker hosted at the root of the
+                                // site using the default scope.
+                                window.addEventListener('load', function() {
+                                    navigator.serviceWorker.register('../sw.js').then((reg)=>{// registration worked
+
+                                    }
+                                    ).catch((error)=>{
+                                        // registration failed
+                                        console.log('Error : ' + error);
+                                    }
+                                    );
+                                });
+                            } else {
+                                console.log('Service workers are not supported.');
+                            }
+                        </script>
+                    </div>
+                    <div class="title_as_h1" style="margin-top: 0.5em">User account</div>
+                    <div style="text-align: left; margin-left: 2em">
+                        <a href="/log-to-my-account" title="Enjoy all the advantages of your account !">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Login
+                        </a>
+                        <br>
+                        <div title="Select your language !">
+                            <i class="fa fa-language" aria-hidden="true" style="color: white; margin-right: 1em"></i>
+                            <a href="/en/what-are-structural-calculations" style="display: inline-block;
+                                           border: 2px solid #88dd00; border-radius: 1em">
+                                <img alt="/en/what-are-structural-calculations" style="width: 1.5em" src="../../static/icons/flag_uk.svg" width="24px" height="24px">
+                            </a>
+                            <a href="/fr/qu-est-ce-que-le-calcul-de-structure" style="display: inline-block;
+                                           ">
+                                <img alt="/fr/qu-est-ce-que-le-calcul-de-structure" style="width: 1.5em" src="../../static/icons/flag_france.svg" width="24px" height="24px">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="title_as_h1" style="margin-top: 0.5em">Eurocodes Tools software</div>
+                    <div style="text-align: left; margin-left: -2em">
+                        <ul style="list-style-type: none;">
+                            <li style="margin-top: 1em">
+                                <span class="title_as_h2" style="color: white">Eurocode 1 - Actions on buildings</span>
+                                <ul style="list-style-type: none;">
+                                    <li style="margin-top: 1.5em">
+                                        <a class="software-button" href="/en/eurocodes-zoning">
+                                            <span style="font-family: 'Roboto', sans-serif; color: #777777; text-transform: uppercase;" translate="no">
+                                                <span style=" margin-right: 0.3em;
+                    display: inline-block;  /* required for transform */
+                    z-index: 10;">Eurocodes</span>
+                                                <span style="color: #dc006c;
+                    display: inline-block;/* required for transform */
+                    z-index: 0;">Zoning</span>
+                                            </span>
+                                        </a>
+                                        <a href="/en/zone-snow-wind-seism-explanations" class="no-print">
+                                            <i class="fas fa-info-circle show_explanations" style="color: white"></i>
+                                            <span class="moreInfo" style="color: white">What are snow, wind and seismic zones?</span>
+                                        </a>
+                                    </li>
+                                    <li style="margin-top: 1.5em">
+                                        <a class="software-button" href="/en/canopy-roofs">
+                                            <span style="font-family: 'Roboto', sans-serif; color: #777777; text-transform: uppercase;" translate="no">
+                                                <span style=" margin-right: 0.3em;
+                    display: inline-block;  /* required for transform */
+                    z-index: 10;">Canopy</span>
+                                                <span style="color: #dc006c;
+                    display: inline-block;/* required for transform */
+                    z-index: 0;">Roofs</span>
+                                            </span>
+                                        </a>
+                                        <a href="/en/canopy-roofs-explanations" class="no-print">
+                                            <i class="fas fa-info-circle show_explanations" style="color: white"></i>
+                                            <span class="moreInfo" style="color: white">What are canopy roofs ?</span>
+                                        </a>
+                                    </li>
+                                    <li style="margin-top: 1.5em">
+                                        <a class="software-button" href="/en/usage-loads">
+                                            <span style="font-family: 'Roboto', sans-serif; color: #777777; text-transform: uppercase;" translate="no">
+                                                <span style=" margin-right: 0.3em;
+                    display: inline-block;  /* required for transform */
+                    z-index: 10;">Usage</span>
+                                                <span style="color: #dc006c;
+                    display: inline-block;/* required for transform */
+                    z-index: 0;">Loads</span>
+                                            </span>
+                                        </a>
+                                        <a href="/en/imposed-loads-explanations" class="no-print">
+                                            <i class="fas fa-info-circle show_explanations" style="color: white"></i>
+                                            <span class="moreInfo" style="color: white">What are imposed loads?</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li style="margin-top: 1em">
+                                <span class="title_as_h2" style="color: white">Eurocode 3 - Steel structures</span>
+                                <ul style="list-style-type: none;">
+                                    <li style="margin-top: 1.5em">
+                                        <a class="software-button" href="/en/cranerunways">
+                                            <span style="font-family: 'Roboto', sans-serif; color: #777777; text-transform: uppercase;" translate="no">
+                                                <span style=" margin-right: 0.3em;
+                    display: inline-block;  /* required for transform */
+                    z-index: 10;">Crane</span>
+                                                <span style="color: #dc006c;
+                    display: inline-block;/* required for transform */
+                    z-index: 0;">RunWays</span>
+                                            </span>
+                                        </a>
+                                        <a href="/en/crane-runways-explanations" class="no-print">
+                                            <i class="fas fa-info-circle show_explanations" style="color: white"></i>
+                                            <span class="moreInfo" style="color: white">How to calculate crane runways?</span>
+                                        </a>
+                                    </li>
+                                    <li style="margin-top: 1.5em">
+                                        <a class="software-button" href="/en/lifting-point">
+                                            <span style="font-family: 'Roboto', sans-serif; color: #777777; text-transform: uppercase;" translate="no">
+                                                <span style=" margin-right: 0.3em;
+                    display: inline-block;  /* required for transform */
+                    z-index: 10;">Lifting</span>
+                                                <span style="color: #dc006c;
+                    display: inline-block;/* required for transform */
+                    z-index: 0;">Point</span>
+                                            </span>
+                                        </a>
+                                        <a href="/en/lifting-lugs-explanations" class="no-print">
+                                            <i class="fas fa-info-circle show_explanations" style="color: white"></i>
+                                            <span class="moreInfo" style="color: white">How to calculate lifting lugs?</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li style="margin-top: 1em">
+                                <span class="title_as_h2" style="color: white">Eurocode 5 - Timber structures</span>
+                                <ul style="list-style-type: none;"></ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <script type="application/javascript">
+                function openMainNav() {
+                    document.getElementById("mainNav").style.width = "100%";
+                }
+
+                function closeMainNav() {
+                    document.getElementById("mainNav").style.width = "0%";
+                }
+            </script>
+            <div class="page_header">
+                <span class="logo logoSize" translate="no">
+                    <span class="word1">Eurocodes</span>
+                    <span class="word2">Tools</span>
+                </span>
+                <div class="taglineSize">Online structural analysis service</div>
+            </div>
+        </header>
+        <hr style="float:left; width: 94%; margin-top: 1em; margin-left: 2em">
+        <div class="container">
+            <div class="summary summarySize no-print">
+                <i class="fas fa-book" style="margin-left: 1em; margin-right: 0.5em"></i>
+                <span style="font-weight: bold;">Choose a chapter</span>
+                <ul>
+                    <li>
+                        <a href="#WhatIs">What are structural calculations ?</a>
+                    </li>
+                    <li>
+                        <a href="#Need">Is it essential ?</a>
+                    </li>
+                    <li>
+                        <a href="#HowMuch">How much is it ?</a>
+                    </li>
+                    <li>
+                        <a href="#StructuralEngineer">Where can I find a structural engineer ?</a>
+                    </li>
+                </ul>
+                <hr>
+                <a href="/en/discussions" style="margin-left: 1em">
+                    <i class="fas fa-comments" style="margin-right: 0.5em"></i>
+                    <span style="font-size: small">See discussions or ask a question</span>
+                </a>
+                <ul style="font-size: small">
+                    <li>
+                        <span style="font-weight: bold">General topics</span>
+                        <ul>
+                            <li onclick="document.location='/generalities-demande-acces'" style="font-size: smaller">
+                                <a lang="fr" href="/fr/generalities-demande-acces">Demande d acces</a>
+                            </li>
+                            <li onclick="document.location='/generalities-logiciel-photovoltaic-shelters'" style="font-size: smaller">
+                                <a lang="fr" href="/fr/generalities-logiciel-photovoltaic-shelters">Logiciel Photovoltaic Shelters</a>
+                            </li>
+                            <li onclick="document.location='/generalities-calcul-ombrieres'" style="font-size: smaller">
+                                <a lang="fr" href="/fr/generalities-calcul-ombrieres">Calcul ombrieres PV</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span style="font-weight: bold">Eurocodes calculation tools</span>
+                        <ul>
+                            <li onclick="document.location='/ectools-report-error-canopy-roofs-choix-plusieurs-pans'" style="font-size: smaller">
+                                <a lang="fr" href="/fr/ectools-report-error-canopy-roofs-choix-plusieurs-pans">Canopy Roofs choix plusieurs pans</a>
+                            </li>
+                            <li onclick="document.location='/ectools-tests-software-tester-logiciel-ombriere'" style="font-size: smaller">
+                                <a lang="fr" href="/fr/ectools-tests-software-tester-logiciel-ombriere">tester le logiciel ombriere</a>
+                            </li>
+                            <li onclick="document.location='/ectools-tests-software-logiciel'" style="font-size: smaller">
+                                <a lang="fr" href="/fr/ectools-tests-software-logiciel">Logiciel PV</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span style="font-weight: bold">Eurocode 1 - Actions on structures</span>
+                        <ul>
+                            <li onclick="document.location='/ec1-1-4-cscd-ombrieres'" style="font-size: smaller">
+                                <a lang="fr" href="/fr/ec1-1-4-cscd-ombrieres">CsCd ombrieres</a>
+                            </li>
+                            <li onclick="document.location='/ec1-1-1-comment-determiner-les-charge'" style="font-size: smaller">
+                                <a lang="fr" href="/fr/ec1-1-1-comment-determiner-les-charge">comment determiner les charge </a>
+                            </li>
+                            <li onclick="document.location='/ec1-1-4-Obstruction-sous-toiture-isolée'" style="font-size: smaller">
+                                <a lang="fr" href="/fr/ec1-1-4-Obstruction-sous-toiture-isol%C3%A9e">Obstruction sous toiture isolee</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span style="font-weight: bold">Eurocode 2 - Concrete structures</span>
+                        <ul>
+                            <li onclick="document.location='/ec2-4-shear-with-lever-arm'" style="font-size: smaller">
+                                <a href="/en/ec2-4-shear-with-lever-arm">Shear with Lever arm</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span style="font-weight: bold">Eurocode 3 - Steel structures</span>
+                        <ul>
+                            <li onclick="document.location='/ec3-6-top-grider'" style="font-size: smaller">
+                                <a href="/en/ec3-6-top-grider">Top grider</a>
+                            </li>
+                            <li onclick="document.location='/ec3-1-8-Bearing-check-of-lifting-lug'" style="font-size: smaller">
+                                <a href="/en/ec3-1-8-Bearing-check-of-lifting-lug">Bearing check of lifting lug</a>
+                            </li>
+                            <li onclick="document.location='/ec3-1-8-dimensionnement-oreille-levage'" style="font-size: smaller">
+                                <a lang="fr" href="/fr/ec3-1-8-dimensionnement-oreille-levage">dimensionnement oreille de levage</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span style="font-weight: bold">Eurocode 5 - Timber structures</span>
+                        <ul>
+                            <li onclick="document.location='/ec5-1-1-section-8-Assemblages-boulonnes-bois-sur-bois'" style="font-size: smaller">
+                                <a lang="fr" href="/fr/ec5-1-1-section-8-Assemblages-boulonnes-bois-sur-bois">Assemblages boulonnes bois sur bois</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span style="font-weight: bold">Eurocode 8 - Earthquake resistance</span>
+                        <ul>
+                            <li onclick="document.location='/ec8-1-ground-type-map'" style="font-size: smaller">
+                                <a href="/en/ec8-1-ground-type-map">Ground type map</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <hr>
+                <a href="/en/" style="margin-left: 1em">
+                    <i class="fas fa-home" style="margin-right: 0.5em"></i>
+                    Return &nbsp;to &nbsp;home &nbsp;page 
+                </a>
+            </div>
+            <h1>Information on structural calculations</h1>
+            <h2>
+                <a name="WhatIs">What are structural calculations ?</a>
+            </h2>
+            <div class="indexDiv">
+                <p>
+                    The structural calculations according to the <a href="/en/all-eurocodes">Eurocodes</a>
+                    are the verifications of the resistance, equilibrium and deformation of a building by a mathematical calculation based on the basis of indications from European construction standards. 
+                </p>
+                <p>The calculations take into account the actions applied to the building (arising from occupancy, climatic, seismic, fire, ...), the characteristics of the foundation soil, the materials used to make the structure (concrete, steel, wood, aluminum, ...) and the reliability objectives to be achieved (which is not the same for a hospital as for a warehouse). </p>
+                <p>
+                    These calculations can be complex and must be carried out as part of a structure design process by a competent person, the <a href="#StructuralEngineer">structural engineer</a>
+                    . 
+                </p>
+            </div>
+            <h2>
+                <a name="Need">Is it essential ?</a>
+            </h2>
+            <div class="indexDiv">
+                <p>Any new building, extension or rehabilitation will require structural checks by calculation. These calculations make it possible to choose the right construction components and the appropriate size to ensure the stability, solidity and sufficient rigidity of the structure. </p>
+                <p>If the project is located at altitude, the snow load can be high. By the seaside, on a hill or in open terrain, the wind can be more powerful. In some areas, the structure of the building could also be subject to seismic effects. It is also often necessary to ensure that the structure is able to resist a fire for a sufficient time to evacuate and that the firefighters can intervene. </p>
+                <p>It is therefore important to carry out structural calculations to anticipate exceptional phenomena and prove the design of the building in the event of a disaster. </p>
+            </div>
+            <h2>
+                <a name="HowMuch">How much is it ?</a>
+            </h2>
+            <div class="indexDiv">
+                <p>
+                    It is difficult to give a generic price, the costs vary according to the size of the project and its complexity.<br>
+                    The price is based on the time the engineer estimates or the number of elements to calculate.<br>
+                </p>
+                <p>In general, the cost of a structural engineer is largely paid for by the savings made by optimizing the volume of materials and the design so that it is easier to manufacture and assemble. In addition, his insurance covers damage in the event of a claim due to a design error and serenity is priceless. </p>
+            </div>
+            <h2>
+                <a name="StructuralEngineer">Where can I find a structural engineer ?</a>
+            </h2>
+            <div class="indexDiv">
+                <p>
+                    It is very simple! Post your request for information on our <a href="/en/discussions">forum</a>
+                    in the « I need a structural engineer » category and choose a sub-category « Concrete / Steel / Timber / Aluminium ». 
+                </p>
+                <p>
+                    If you are at the pre-project stage, you can also study a technical solution with our <a href="/en/">structural calculation tools</a>
+                    . 
+                </p>
+            </div>
+        </div>
+        <script async type="text/javascript" src="https://kit.fontawesome.com/2077bc9300.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="/static/gen/global.js?35c77856"></script>
+        <footer>
+            <div class="versionAndDesignerPosition" style="font-size: 0.6em; font-style: italic">
+                <span>
+                    <a style="color: white" href="/en/versions" target="_blank" rel="noopener">Show versions</a>
+                    - &copy;copyright 2018- 
+                </span>
+                - 
+                <span>
+                    <a style="color: white" href="/en/author-of-this-online-service" target="_blank" rel="noopener">St &eacute;phane PERRIN</a>
+                </span>
+                - 
+                <span>
+                    <a style="color: white" href="/en/legal-notices-GTU" target="_blank" rel="noopener">Legal notices / GTU</a>
+                </span>
+            </div>
+        </footer>
+    </body>
+</html>
+<!DOCTYPE html>
+<html oncopy="return false" oncut="return false" lang="en" prefix="og: https://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="theme-color" content="#eee">
+        <link rel="manifest" crossorigin="use-credentials" href="/manifest.webmanifest">
+        <link rel="icon" type="image/png" href="/static/icons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/static/icons/favicon-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="/static/icons/favicon-512x512.png" sizes="512x512">
+        <link rel="apple-touch-icon" href="/static/icons/favicon-180x180.png" sizes="180x180">
+        <link rel="preconnect" href="https://ajax.googleapis.com">
+        <link rel="preconnect" href="https://cdn.jsdelivr.net">
+        <link rel="preconnect" href="https://kit-free.fontawesome.com">
+        <link rel="preload" href="../static/gen/fonts/KFOlCnqEu92Fr1MmSU5fChc4EsB.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link rel="preload" type="text/css" href="/static/gen/global.css?aebecd19" as="style">
+        <link rel="stylesheet" type="text/css" href="/static/gen/global.css?aebecd19">
+        <title translate="no">Information on structural calculations | Eurocodes Tools</title>
+        <meta name="description" content="Are you looking for information on structural calculations, building design methods or software? Visit eurocodes-tools.com">
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "SoftwareApplication",
+                "name": "Eurocodes Tools",
+                "url": "https://eurocodes-tools.com/en/",
+                "author": {
+                    "@type": "Person",
+                    "name": "Stéphane PERRIN"
+                },
+                "applicationCategory": "structural analysis",
+                "image": "https://eurocodes-tools.com/static/icons/favicon-512x512.png",
+                "operatingSystem": "Web",
+                "requirements": "Chrome / Edge / Firefox / ...",
+                "screenshot": "https://eurocodes-tools.com/static/img/screenshot.webp",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0"
+                }
+            }</script>
+    </head>
+    <body>
+        <div class="phone"></div>
+        <div class="message">Please rotate your device! </div>
+        <header>
+            <div class="scale no-print">
+                <span class="main_menu_icon" title="Main menu" onclick="openMainNav()">
+                    <i class="fas fa-bars fa-2x"></i>
+                </span>
+            </div>
+            <div id="mainNav" class="overlay">
+                <button href="javascript:void(0)" class="closebtn" onclick="closeMainNav()" style="background: none;border: none; padding: 0;">&times;</button>
+                <div class="overlay-content">
+                    <div class="title_as_h1" style="margin-top: 0.5em">Main</div>
+                    <div style="text-align: left; margin-left: 2em">
+                        <a href="/en/" title="Back to the main page !">
+                            <i class="fas fa-home"></i>
+                            Home
+                        </a>
+                        <br>
+                        <a href="/en/videos" title="Discover our structural calculation software in videos !">
+                            <i class="fas fa-film" style="margin-right: 0.5em"></i>
+                            Watch the videos
+                        </a>
+                        <br>
+                        <a href="/en/discussions" title="If you don't need help, maybe you can help someone !">
+                            <i class="fas fa-comments" style="margin-right: 0.5em"></i>
+                            See discussions or ask a question
+                        </a>
+                        <br>
+                        <button class="install-application" style="background: none;border: none; padding: 0;" title="More easily accessible and clearer !">
+                            <i class="fas fa-download" style="margin-right: 0.5em;"></i>
+                            Install the application
+                        </button>
+                        <script>
+                            if ('serviceWorker'in navigator) {
+                                // Register a service worker hosted at the root of the
+                                // site using the default scope.
+                                window.addEventListener('load', function() {
+                                    navigator.serviceWorker.register('../sw.js').then((reg)=>{// registration worked
+
+                                    }
+                                    ).catch((error)=>{
+                                        // registration failed
+                                        console.log('Error : ' + error);
+                                    }
+                                    );
+                                });
+                            } else {
+                                console.log('Service workers are not supported.');
+                            }
+                        </script>
+                    </div>
+                    <div class="title_as_h1" style="margin-top: 0.5em">User account</div>
+                    <div style="text-align: left; margin-left: 2em">
+                        <a href="/log-to-my-account" title="Enjoy all the advantages of your account !">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Login
+                        </a>
+                        <br>
+                        <div title="Select your language !">
+                            <i class="fa fa-language" aria-hidden="true" style="color: white; margin-right: 1em"></i>
+                            <a href="/en/what-are-structural-calculations" style="display: inline-block;
+                                           border: 2px solid #88dd00; border-radius: 1em">
+                                <img alt="/en/what-are-structural-calculations" style="width: 1.5em" src="../../static/icons/flag_uk.svg" width="24px" height="24px">
+                            </a>
+                            <a href="/fr/qu-est-ce-que-le-calcul-de-structure" style="display: inline-block;
+                                           ">
+                                <img alt="/fr/qu-est-ce-que-le-calcul-de-structure" style="width: 1.5em" src="../../static/icons/flag_france.svg" width="24px" height="24px">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="title_as_h1" style="margin-top: 0.5em">Eurocodes Tools software</div>
+                    <div style="text-align: left; margin-left: -2em">
+                        <ul style="list-style-type: none;">
+                            <li style="margin-top: 1em">
+                                <span class="title_as_h2" style="color: white">Eurocode 1 - Actions on buildings</span>
+                                <ul style="list-style-type: none;">
+                                    <li style="margin-top: 1.5em">
+                                        <a class="software-button" href="/en/eurocodes-zoning">
+                                            <span style="font-family: 'Roboto', sans-serif; color: #777777; text-transform: uppercase;" translate="no">
+                                                <span style=" margin-right: 0.3em;
+                    display: inline-block;  /* required for transform */
+                    z-index: 10;">Eurocodes</span>
+                                                <span style="color: #dc006c;
+                    display: inline-block;/* required for transform */
+                    z-index: 0;">Zoning</span>
+                                            </span>
+                                        </a>
+                                        <a href="/en/zone-snow-wind-seism-explanations" class="no-print">
+                                            <i class="fas fa-info-circle show_explanations" style="color: white"></i>
+                                            <span class="moreInfo" style="color: white">What are snow, wind and seismic zones?</span>
+                                        </a>
+                                    </li>
+                                    <li style="margin-top: 1.5em">
+                                        <a class="software-button" href="/en/canopy-roofs">
+                                            <span style="font-family: 'Roboto', sans-serif; color: #777777; text-transform: uppercase;" translate="no">
+                                                <span style=" margin-right: 0.3em;
+                    display: inline-block;  /* required for transform */
+                    z-index: 10;">Canopy</span>
+                                                <span style="color: #dc006c;
+                    display: inline-block;/* required for transform */
+                    z-index: 0;">Roofs</span>
+                                            </span>
+                                        </a>
+                                        <a href="/en/canopy-roofs-explanations" class="no-print">
+                                            <i class="fas fa-info-circle show_explanations" style="color: white"></i>
+                                            <span class="moreInfo" style="color: white">What are canopy roofs ?</span>
+                                        </a>
+                                    </li>
+                                    <li style="margin-top: 1.5em">
+                                        <a class="software-button" href="/en/usage-loads">
+                                            <span style="font-family: 'Roboto', sans-serif; color: #777777; text-transform: uppercase;" translate="no">
+                                                <span style=" margin-right: 0.3em;
+                    display: inline-block;  /* required for transform */
+                    z-index: 10;">Usage</span>
+                                                <span style="color: #dc006c;
+                    display: inline-block;/* required for transform */
+                    z-index: 0;">Loads</span>
+                                            </span>
+                                        </a>
+                                        <a href="/en/imposed-loads-explanations" class="no-print">
+                                            <i class="fas fa-info-circle show_explanations" style="color: white"></i>
+                                            <span class="moreInfo" style="color: white">What are imposed loads?</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li style="margin-top: 1em">
+                                <span class="title_as_h2" style="color: white">Eurocode 3 - Steel structures</span>
+                                <ul style="list-style-type: none;">
+                                    <li style="margin-top: 1.5em">
+                                        <a class="software-button" href="/en/cranerunways">
+                                            <span style="font-family: 'Roboto', sans-serif; color: #777777; text-transform: uppercase;" translate="no">
+                                                <span style=" margin-right: 0.3em;
+                    display: inline-block;  /* required for transform */
+                    z-index: 10;">Crane</span>
+                                                <span style="color: #dc006c;
+                    display: inline-block;/* required for transform */
+                    z-index: 0;">RunWays</span>
+                                            </span>
+                                        </a>
+                                        <a href="/en/crane-runways-explanations" class="no-print">
+                                            <i class="fas fa-info-circle show_explanations" style="color: white"></i>
+                                            <span class="moreInfo" style="color: white">How to calculate crane runways?</span>
+                                        </a>
+                                    </li>
+                                    <li style="margin-top: 1.5em">
+                                        <a class="software-button" href="/en/lifting-point">
+                                            <span style="font-family: 'Roboto', sans-serif; color: #777777; text-transform: uppercase;" translate="no">
+                                                <span style=" margin-right: 0.3em;
+                    display: inline-block;  /* required for transform */
+                    z-index: 10;">Lifting</span>
+                                                <span style="color: #dc006c;
+                    display: inline-block;/* required for transform */
+                    z-index: 0;">Point</span>
+                                            </span>
+                                        </a>
+                                        <a href="/en/lifting-lugs-explanations" class="no-print">
+                                            <i class="fas fa-info-circle show_explanations" style="color: white"></i>
+                                            <span class="moreInfo" style="color: white">How to calculate lifting lugs?</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li style="margin-top: 1em">
+                                <span class="title_as_h2" style="color: white">Eurocode 5 - Timber structures</span>
+                                <ul style="list-style-type: none;"></ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <script type="application/javascript">
+                function openMainNav() {
+                    document.getElementById("mainNav").style.width = "100%";
+                }
+
+                function closeMainNav() {
+                    document.getElementById("mainNav").style.width = "0%";
+                }
+            </script>
+            <div class="page_header">
+                <span class="logo logoSize" translate="no">
+                    <span class="word1">Eurocodes</span>
+                    <span class="word2">Tools</span>
+                </span>
+                <div class="taglineSize">Online structural analysis service</div>
+            </div>
+        </header>
+        <hr style="float:left; width: 94%; margin-top: 1em; margin-left: 2em">
+        <div class="container">
+            <div class="summary summarySize no-print">
+                <i class="fas fa-book" style="margin-left: 1em; margin-right: 0.5em"></i>
+                <span style="font-weight: bold;">Choose a chapter</span>
+                <ul>
+                    <li>
+                        <a href="#WhatIs">What are structural calculations ?</a>
+                    </li>
+                    <li>
+                        <a href="#Need">Is it essential ?</a>
+                    </li>
+                    <li>
+                        <a href="#HowMuch">How much is it ?</a>
+                    </li>
+                    <li>
+                        <a href="#StructuralEngineer">Where can I find a structural engineer ?</a>
+                    </li>
+                </ul>
+                <hr>
+                <a href="/en/discussions" style="margin-left: 1em">
+                    <i class="fas fa-comments" style="margin-right: 0.5em"></i>
+                    <span style="font-size: small">See discussions or ask a question</span>
+                </a>
+                <ul style="font-size: small">
+                    <li>
+                        <span style="font-weight: bold">General topics</span>
+                        <ul>
+                            <li onclick="document.location='/generalities-demande-acces'" style="font-size: smaller">
+                                <a lang="fr" href="/fr/generalities-demande-acces">Demande d acces</a>
+                            </li>
+                            <li onclick="document.location='/generalities-logiciel-photovoltaic-shelters'" style="font-size: smaller">
+                                <a lang="fr" href="/fr/generalities-logiciel-photovoltaic-shelters">Logiciel Photovoltaic Shelters</a>
+                            </li>
+                            <li onclick="document.location='/generalities-calcul-ombrieres'" style="font-size: smaller">
+                                <a lang="fr" href="/fr/generalities-calcul-ombrieres">Calcul ombrieres PV</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span style="font-weight: bold">Eurocodes calculation tools</span>
+                        <ul>
+                            <li onclick="document.location='/ectools-report-error-canopy-roofs-choix-plusieurs-pans'" style="font-size: smaller">
+                                <a lang="fr" href="/fr/ectools-report-error-canopy-roofs-choix-plusieurs-pans">Canopy Roofs choix plusieurs pans</a>
+                            </li>
+                            <li onclick="document.location='/ectools-tests-software-tester-logiciel-ombriere'" style="font-size: smaller">
+                                <a lang="fr" href="/fr/ectools-tests-software-tester-logiciel-ombriere">tester le logiciel ombriere</a>
+                            </li>
+                            <li onclick="document.location='/ectools-tests-software-logiciel'" style="font-size: smaller">
+                                <a lang="fr" href="/fr/ectools-tests-software-logiciel">Logiciel PV</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span style="font-weight: bold">Eurocode 1 - Actions on structures</span>
+                        <ul>
+                            <li onclick="document.location='/ec1-1-4-cscd-ombrieres'" style="font-size: smaller">
+                                <a lang="fr" href="/fr/ec1-1-4-cscd-ombrieres">CsCd ombrieres</a>
+                            </li>
+                            <li onclick="document.location='/ec1-1-1-comment-determiner-les-charge'" style="font-size: smaller">
+                                <a lang="fr" href="/fr/ec1-1-1-comment-determiner-les-charge">comment determiner les charge </a>
+                            </li>
+                            <li onclick="document.location='/ec1-1-4-Obstruction-sous-toiture-isolée'" style="font-size: smaller">
+                                <a lang="fr" href="/fr/ec1-1-4-Obstruction-sous-toiture-isol%C3%A9e">Obstruction sous toiture isolee</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span style="font-weight: bold">Eurocode 2 - Concrete structures</span>
+                        <ul>
+                            <li onclick="document.location='/ec2-4-shear-with-lever-arm'" style="font-size: smaller">
+                                <a href="/en/ec2-4-shear-with-lever-arm">Shear with Lever arm</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span style="font-weight: bold">Eurocode 3 - Steel structures</span>
+                        <ul>
+                            <li onclick="document.location='/ec3-6-top-grider'" style="font-size: smaller">
+                                <a href="/en/ec3-6-top-grider">Top grider</a>
+                            </li>
+                            <li onclick="document.location='/ec3-1-8-Bearing-check-of-lifting-lug'" style="font-size: smaller">
+                                <a href="/en/ec3-1-8-Bearing-check-of-lifting-lug">Bearing check of lifting lug</a>
+                            </li>
+                            <li onclick="document.location='/ec3-1-8-dimensionnement-oreille-levage'" style="font-size: smaller">
+                                <a lang="fr" href="/fr/ec3-1-8-dimensionnement-oreille-levage">dimensionnement oreille de levage</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span style="font-weight: bold">Eurocode 5 - Timber structures</span>
+                        <ul>
+                            <li onclick="document.location='/ec5-1-1-section-8-Assemblages-boulonnes-bois-sur-bois'" style="font-size: smaller">
+                                <a lang="fr" href="/fr/ec5-1-1-section-8-Assemblages-boulonnes-bois-sur-bois">Assemblages boulonnes bois sur bois</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span style="font-weight: bold">Eurocode 8 - Earthquake resistance</span>
+                        <ul>
+                            <li onclick="document.location='/ec8-1-ground-type-map'" style="font-size: smaller">
+                                <a href="/en/ec8-1-ground-type-map">Ground type map</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <hr>
+                <a href="/en/" style="margin-left: 1em">
+                    <i class="fas fa-home" style="margin-right: 0.5em"></i>
+                    Return &nbsp;to &nbsp;home &nbsp;page 
+                </a>
+            </div>
+            <h1>Information on structural calculations</h1>
+            <h2>
+                <a name="WhatIs">What are structural calculations ?</a>
+            </h2>
+            <div class="indexDiv">
+                <p>
+                    The structural calculations according to the <a href="/en/all-eurocodes">Eurocodes</a>
+                    are the verifications of the resistance, equilibrium and deformation of a building by a mathematical calculation based on the basis of indications from European construction standards. 
+                </p>
+                <p>The calculations take into account the actions applied to the building (arising from occupancy, climatic, seismic, fire, ...), the characteristics of the foundation soil, the materials used to make the structure (concrete, steel, wood, aluminum, ...) and the reliability objectives to be achieved (which is not the same for a hospital as for a warehouse). </p>
+                <p>
+                    These calculations can be complex and must be carried out as part of a structure design process by a competent person, the <a href="#StructuralEngineer">structural engineer</a>
+                    . 
+                </p>
+            </div>
+            <h2>
+                <a name="Need">Is it essential ?</a>
+            </h2>
+            <div class="indexDiv">
+                <p>Any new building, extension or rehabilitation will require structural checks by calculation. These calculations make it possible to choose the right construction components and the appropriate size to ensure the stability, solidity and sufficient rigidity of the structure. </p>
+                <p>If the project is located at altitude, the snow load can be high. By the seaside, on a hill or in open terrain, the wind can be more powerful. In some areas, the structure of the building could also be subject to seismic effects. It is also often necessary to ensure that the structure is able to resist a fire for a sufficient time to evacuate and that the firefighters can intervene. </p>
+                <p>It is therefore important to carry out structural calculations to anticipate exceptional phenomena and prove the design of the building in the event of a disaster. </p>
+            </div>
+            <h2>
+                <a name="HowMuch">How much is it ?</a>
+            </h2>
+            <div class="indexDiv">
+                <p>
+                    It is difficult to give a generic price, the costs vary according to the size of the project and its complexity.<br>
+                    The price is based on the time the engineer estimates or the number of elements to calculate.<br>
+                </p>
+                <p>In general, the cost of a structural engineer is largely paid for by the savings made by optimizing the volume of materials and the design so that it is easier to manufacture and assemble. In addition, his insurance covers damage in the event of a claim due to a design error and serenity is priceless. </p>
+            </div>
+            <h2>
+                <a name="StructuralEngineer">Where can I find a structural engineer ?</a>
+            </h2>
+            <div class="indexDiv">
+                <p>
+                    It is very simple! Post your request for information on our <a href="/en/discussions">forum</a>
+                    in the « I need a structural engineer » category and choose a sub-category « Concrete / Steel / Timber / Aluminium ». 
+                </p>
+                <p>
+                    If you are at the pre-project stage, you can also study a technical solution with our <a href="/en/">structural calculation tools</a>
+                    . 
+                </p>
+            </div>
+        </div>
+        <script async type="text/javascript" src="https://kit.fontawesome.com/2077bc9300.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="/static/gen/global.js?35c77856"></script>
+        <footer>
+            <div class="versionAndDesignerPosition" style="font-size: 0.6em; font-style: italic">
+                <span>
+                    <a style="color: white" href="/en/versions" target="_blank" rel="noopener">Show versions</a>
+                    - &copy;copyright 2018- 
+                </span>
+                - 
+                <span>
+                    <a style="color: white" href="/en/author-of-this-online-service" target="_blank" rel="noopener">St &eacute;phane PERRIN</a>
+                </span>
+                - 
+                <span>
+                    <a style="color: white" href="/en/legal-notices-GTU" target="_blank" rel="noopener">Legal notices / GTU</a>
+                </span>
+            </div>
+        </footer>
+    </body>
+</html>
