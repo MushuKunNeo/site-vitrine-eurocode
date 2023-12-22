@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html oncopy="return false" oncut="return false" lang="en" prefix="og: https://ogp.me/ns#">
+<html oncopy="return false" oncut="return false" lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,31 +12,25 @@
         <link rel="preconnect" href="https://ajax.googleapis.com">
         <link rel="preconnect" href="https://cdn.jsdelivr.net">
         <link rel="preconnect" href="https://kit-free.fontawesome.com">
-        <link rel="preload" href="../static/gen/fonts/KFOlCnqEu92Fr1MmSU5fChc4EsB.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
         <link rel="preload" type="text/css" href="/static/gen/global.css?aebecd19" as="style">
         <link rel="stylesheet" type="text/css" href="/static/gen/global.css?aebecd19">
-        <title translate="no">Information on structural calculations | Eurocodes Tools</title>
-        <meta name="description" content="Are you looking for information on structural calculations, building design methods or software? Visit eurocodes-tools.com">
+        <title translate="no">Zones for snow, wind and seism | Eurocodes Tools</title>
+        <meta name="description" content="Determine the snow, wind and seism zones according to the maps taken from the national annexes to the Eurocodes.">
         <script type="application/ld+json">
             {
                 "@context": "http://schema.org",
-                "@type": "SoftwareApplication",
-                "name": "Eurocodes Tools",
-                "url": "https://eurocodes-tools.com/en/",
+                "@type": "Article",
+                "name": "Snow, wind and seism zones for a building place",
                 "author": {
                     "@type": "Person",
                     "name": "Stéphane PERRIN"
                 },
-                "applicationCategory": "structural analysis",
-                "image": "https://eurocodes-tools.com/static/icons/favicon-512x512.png",
-                "operatingSystem": "Web",
-                "requirements": "Chrome / Edge / Firefox / ...",
-                "screenshot": "https://eurocodes-tools.com/static/img/screenshot.webp",
-                "offers": {
-                    "@type": "Offer",
-                    "price": "0"
-                }
+                "articleSection": "Eurocode 1",
+                "url": "https://eurocodes-tools.com/en/zone-snow-wind-seism-explanations",
+                "image": "https://eurocodes-tools.com/static/img/EC_Zoning/WindMap_IT.webp"
             }</script>
     </head>
     <body>
@@ -47,6 +41,12 @@
                 <span class="main_menu_icon" title="Main menu" onclick="openMainNav()">
                     <i class="fas fa-bars fa-2x"></i>
                 </span>
+                <svg class="user_info">
+                    <path id="curve" d="M0,96C 96 96 ,96 00, 96 00" fill="transparent"/>
+                    <text width="500" style="font-size: 0.7em; ">
+                        <textpath xlink:href="#curve">Manuel GREGAM </textpath>
+                    </text>
+                </svg>
             </div>
             <div id="mainNav" class="overlay">
                 <button href="javascript:void(0)" class="closebtn" onclick="closeMainNav()" style="background: none;border: none; padding: 0;">&times;</button>
@@ -66,6 +66,11 @@
                         <a href="/en/discussions" title="If you don't need help, maybe you can help someone !">
                             <i class="fas fa-comments" style="margin-right: 0.5em"></i>
                             See discussions or ask a question
+                        </a>
+                        <br>
+                        <a href="mailto:eurocodestools@gmail.com?subject=Message from Manuel GREGAM - None" title="We are here to serve you !">
+                            <i class="fas fa-envelope" style="margin-right: 0.5em"></i>
+                            Write us
                         </a>
                         <br>
                         <button class="install-application" style="background: none;border: none; padding: 0;" title="More easily accessible and clearer !">
@@ -93,26 +98,68 @@
                     </div>
                     <div class="title_as_h1" style="margin-top: 0.5em">User account</div>
                     <div style="text-align: left; margin-left: 2em">
-                        <a href="/log-to-my-account" title="Enjoy all the advantages of your account !">
-                            <i class="fas fa-sign-in-alt"></i>
-                            Login
+                        <a href="/logout" title="See you next time !" onclick="removeSW()">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </a>
+                        <br>
+                        <a href="/edit-user-profile" title="You can change your information here !">
+                            <i class="fas fa-user"></i>
+                            <span>Edit my profile</span>
                         </a>
                         <br>
                         <div title="Select your language !">
                             <i class="fa fa-language" aria-hidden="true" style="color: white; margin-right: 1em"></i>
-                            <a href="/en/what-are-structural-calculations" style="display: inline-block;
+                            <a href="/en/zone-snow-wind-seism-explanations" style="display: inline-block;
                                            border: 2px solid #88dd00; border-radius: 1em">
-                                <img alt="/en/what-are-structural-calculations" style="width: 1.5em" src="../../static/icons/flag_uk.svg" width="24px" height="24px">
+                                <img alt="/en/zone-snow-wind-seism-explanations" style="width: 1.5em" src="../../static/icons/flag_uk.svg" width="24px" height="24px">
                             </a>
-                            <a href="/fr/qu-est-ce-que-le-calcul-de-structure" style="display: inline-block;
+                            <a href="/fr/zone-neige-vent-seisme-explications" style="display: inline-block;
                                            ">
-                                <img alt="/fr/qu-est-ce-que-le-calcul-de-structure" style="width: 1.5em" src="../../static/icons/flag_france.svg" width="24px" height="24px">
+                                <img alt="/fr/zone-neige-vent-seisme-explications" style="width: 1.5em" src="../../static/icons/flag_france.svg" width="24px" height="24px">
                             </a>
                         </div>
                     </div>
                     <div class="title_as_h1" style="margin-top: 0.5em">Eurocodes Tools software</div>
                     <div style="text-align: left; margin-left: -2em">
                         <ul style="list-style-type: none;">
+                            <li style="margin-bottom: 2em">
+                                <span class="title_as_h2" style="color: white">Design of photovoltaic buildings</span>
+                                <ul style="list-style-type: none;">
+                                    <li style="margin-top: 1.5em; height: 5em; display: block;">
+                                        <ul style="position: absolute; left: 20em;">
+                                            <li>
+                                                <a href="/en/photovoltaic-shelters-explanations" class="no-print">
+                                                    <i class="fas fa-info-circle show_explanations" style="color: white"></i>
+                                                    <span class="moreInfo" style="color: white">What are photovoltaic shelters?</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/en/photovoltaic-shelters-design-software" class="no-print">
+                                                    <i class="fas fa-info-circle show_explanations" style="color: white"></i>
+                                                    <span class="moreInfo" style="color: white">How to design the structure?</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/en/photovoltaic-shelters-design-certification-insurance" class="no-print">
+                                                    <i class="fas fa-info-circle show_explanations" style="color: white"></i>
+                                                    <span class="moreInfo" style="color: white">Execution phase and insurance</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <a class="software-button" style="margin-top: 0.8em;" href="/en/photovoltaic-shelters">
+                                            <span style="font-family: 'Roboto', sans-serif; color: #777777; text-transform: uppercase;" translate="no">
+                                                <span style=" margin-right: 0.3em;
+                    display: inline-block;  /* required for transform */
+                    z-index: 10;">Photovoltaic</span>
+                                                <span style="color: #dc006c;
+                    display: inline-block;/* required for transform */
+                    z-index: 0;">Shelters</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
                             <li style="margin-top: 1em">
                                 <span class="title_as_h2" style="color: white">Eurocode 1 - Actions on buildings</span>
                                 <ul style="list-style-type: none;">
@@ -205,7 +252,24 @@
                             </li>
                             <li style="margin-top: 1em">
                                 <span class="title_as_h2" style="color: white">Eurocode 5 - Timber structures</span>
-                                <ul style="list-style-type: none;"></ul>
+                                <ul style="list-style-type: none;">
+                                    <li style="margin-top: 1.5em">
+                                        <a class="software-button" href="/en/timber-connections">
+                                            <span style="font-family: 'Roboto', sans-serif; color: #777777; text-transform: uppercase;" translate="no">
+                                                <span style=" margin-right: 0.3em;
+                    display: inline-block;  /* required for transform */
+                    z-index: 10;">Timber</span>
+                                                <span style="color: #dc006c;
+                    display: inline-block;/* required for transform */
+                    z-index: 0;">Connections</span>
+                                            </span>
+                                        </a>
+                                        <a href="/en/timber-connections-explanations" class="no-print">
+                                            <i class="fas fa-info-circle show_explanations" style="color: white"></i>
+                                            <span class="moreInfo" style="color: white">How to calculate timber connections?</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
@@ -223,64 +287,60 @@
             <div class="page_header">
                 <span class="logo logoSize" translate="no">
                     <span class="word1">Eurocodes</span>
-                    <span class="word2">Tools</span>
+                    <span class="word2">Zoning</span>
                 </span>
-                <div class="taglineSize">Online structural analysis service</div>
+                <div class="taglineSize">Snow, wind and seism zones for a building place </div>
             </div>
         </header>
         <hr style="float:left; width: 94%; margin-top: 1em; margin-left: 2em">
         <div class="container">
+            <input type="button" value="Get the zones for a localisation using Eurocodes Zoning !" onclick="location.href='/en/eurocodes-zoning'" class="btn btn-next no-print">
             <div class="summary summarySize no-print">
                 <i class="fas fa-book" style="margin-left: 1em; margin-right: 0.5em"></i>
                 <span style="font-weight: bold;">Choose a chapter</span>
                 <ul>
                     <li>
-                        <a href="#WhatIs">What are structural calculations ?</a>
+                        <a href="#WhatIs1">What is a snow zone ?</a>
                     </li>
                     <li>
-                        <a href="#Need">Is it essential ?</a>
+                        <a href="#WhatIs2">What is a wind zone ?</a>
                     </li>
                     <li>
-                        <a href="#HowMuch">How much is it ?</a>
+                        <a href="#WhatIs3">What is a seismic zone ?</a>
                     </li>
                     <li>
-                        <a href="#StructuralEngineer">Where can I find a structural engineer ?</a>
+                        <a href="#HowTo1">How to calculate snow on your building site ?</a>
+                    </li>
+                    <li>
+                        <a href="#Why1">Why calculate peak velocity pressure by wind direction ?</a>
+                    </li>
+                    <li>
+                        <a href="#HowTo2">How to calculate peak velocity pressure by wind direction ?</a>
+                    </li>
+                    <li>
+                        <a href="#HowTo3">How to calculate wind velocity from pressure ?</a>
+                    </li>
+                    <li>
+                        <a href="#HowTo4">Do I need for seismic analysis ?</a>
+                    </li>
+                    <li>
+                        <a href="#Example">Example of results given by the software</a>
+                    </li>
+                    <li>
+                        <a style="word-break: break-word" href="/en/eurocodes-zoning">Get &nbsp;the &nbsp;zones &nbsp;for &nbsp;a &nbsp;localisation &nbsp;using &nbsp;Eurocodes &nbsp;Zoning &nbsp;!</a>
                     </li>
                 </ul>
+                <hr>
+                <a href="/en/all-eurocodes" style="margin-left: 1em">
+                    <i class="fas fa-globe-europe" style="margin-right: 0.5em"></i>
+                    What are the Eurocodes ? 
+                </a>
                 <hr>
                 <a href="/en/discussions" style="margin-left: 1em">
                     <i class="fas fa-comments" style="margin-right: 0.5em"></i>
                     <span style="font-size: small">See discussions or ask a question</span>
                 </a>
                 <ul style="font-size: small">
-                    <li>
-                        <span style="font-weight: bold">General topics</span>
-                        <ul>
-                            <li onclick="document.location='/generalities-demande-acces'" style="font-size: smaller">
-                                <a lang="fr" href="/fr/generalities-demande-acces">Demande d acces</a>
-                            </li>
-                            <li onclick="document.location='/generalities-logiciel-photovoltaic-shelters'" style="font-size: smaller">
-                                <a lang="fr" href="/fr/generalities-logiciel-photovoltaic-shelters">Logiciel Photovoltaic Shelters</a>
-                            </li>
-                            <li onclick="document.location='/generalities-calcul-ombrieres'" style="font-size: smaller">
-                                <a lang="fr" href="/fr/generalities-calcul-ombrieres">Calcul ombrieres PV</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <span style="font-weight: bold">Eurocodes calculation tools</span>
-                        <ul>
-                            <li onclick="document.location='/ectools-report-error-canopy-roofs-choix-plusieurs-pans'" style="font-size: smaller">
-                                <a lang="fr" href="/fr/ectools-report-error-canopy-roofs-choix-plusieurs-pans">Canopy Roofs choix plusieurs pans</a>
-                            </li>
-                            <li onclick="document.location='/ectools-tests-software-tester-logiciel-ombriere'" style="font-size: smaller">
-                                <a lang="fr" href="/fr/ectools-tests-software-tester-logiciel-ombriere">tester le logiciel ombriere</a>
-                            </li>
-                            <li onclick="document.location='/ectools-tests-software-logiciel'" style="font-size: smaller">
-                                <a lang="fr" href="/fr/ectools-tests-software-logiciel">Logiciel PV</a>
-                            </li>
-                        </ul>
-                    </li>
                     <li>
                         <span style="font-weight: bold">Eurocode 1 - Actions on structures</span>
                         <ul>
@@ -295,44 +355,6 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <span style="font-weight: bold">Eurocode 2 - Concrete structures</span>
-                        <ul>
-                            <li onclick="document.location='/ec2-4-shear-with-lever-arm'" style="font-size: smaller">
-                                <a href="/en/ec2-4-shear-with-lever-arm">Shear with Lever arm</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <span style="font-weight: bold">Eurocode 3 - Steel structures</span>
-                        <ul>
-                            <li onclick="document.location='/ec3-6-top-grider'" style="font-size: smaller">
-                                <a href="/en/ec3-6-top-grider">Top grider</a>
-                            </li>
-                            <li onclick="document.location='/ec3-1-8-Bearing-check-of-lifting-lug'" style="font-size: smaller">
-                                <a href="/en/ec3-1-8-Bearing-check-of-lifting-lug">Bearing check of lifting lug</a>
-                            </li>
-                            <li onclick="document.location='/ec3-1-8-dimensionnement-oreille-levage'" style="font-size: smaller">
-                                <a lang="fr" href="/fr/ec3-1-8-dimensionnement-oreille-levage">dimensionnement oreille de levage</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <span style="font-weight: bold">Eurocode 5 - Timber structures</span>
-                        <ul>
-                            <li onclick="document.location='/ec5-1-1-section-8-Assemblages-boulonnes-bois-sur-bois'" style="font-size: smaller">
-                                <a lang="fr" href="/fr/ec5-1-1-section-8-Assemblages-boulonnes-bois-sur-bois">Assemblages boulonnes bois sur bois</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <span style="font-weight: bold">Eurocode 8 - Earthquake resistance</span>
-                        <ul>
-                            <li onclick="document.location='/ec8-1-ground-type-map'" style="font-size: smaller">
-                                <a href="/en/ec8-1-ground-type-map">Ground type map</a>
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
                 <hr>
                 <a href="/en/" style="margin-left: 1em">
@@ -340,483 +362,1013 @@
                     Return &nbsp;to &nbsp;home &nbsp;page 
                 </a>
             </div>
-            <h1>Information on structural calculations</h1>
-            <h2>
-                <a name="WhatIs">What are structural calculations ?</a>
-            </h2>
+            <h1>Zones for snow, wind and seism</h1>
             <div class="indexDiv">
-                <p>
-                    The structural calculations according to the <a href="/en/all-eurocodes">Eurocodes</a>
-                    are the verifications of the resistance, equilibrium and deformation of a building by a mathematical calculation based on the basis of indications from European construction standards. 
-                </p>
-                <p>The calculations take into account the actions applied to the building (arising from occupancy, climatic, seismic, fire, ...), the characteristics of the foundation soil, the materials used to make the structure (concrete, steel, wood, aluminum, ...) and the reliability objectives to be achieved (which is not the same for a hospital as for a warehouse). </p>
-                <p>
-                    These calculations can be complex and must be carried out as part of a structure design process by a competent person, the <a href="#StructuralEngineer">structural engineer</a>
-                    . 
-                </p>
+                Snow zones and wind zones are specified on maps provided in the national annexes to the Eurocode 1.<br>Seism zones are specified on maps provided in the national annexes to the Eurocode 8 or in national legal texts. 
             </div>
             <h2>
-                <a name="Need">Is it essential ?</a>
+                <a name="WhatIs1">What is a snow zone ?</a>
             </h2>
             <div class="indexDiv">
-                <p>Any new building, extension or rehabilitation will require structural checks by calculation. These calculations make it possible to choose the right construction components and the appropriate size to ensure the stability, solidity and sufficient rigidity of the structure. </p>
-                <p>If the project is located at altitude, the snow load can be high. By the seaside, on a hill or in open terrain, the wind can be more powerful. In some areas, the structure of the building could also be subject to seismic effects. It is also often necessary to ensure that the structure is able to resist a fire for a sufficient time to evacuate and that the firefighters can intervene. </p>
-                <p>It is therefore important to carry out structural calculations to anticipate exceptional phenomena and prove the design of the building in the event of a disaster. </p>
+                <p>Each country has set characteristic snow loads on the ground for each portion of its territory. The division is usually specified in the national annex of Eurocode 1 part 1-3. </p>
+                <ul>
+                    <li>
+                        <a href="/en/snow-zones-map-belgium">Snow zones of Belgium (2007-2023)</a>
+                    </li>
+                    <li>
+                        <a href="/en/snow-zones-map-france">Snow zones of France (2011-2023)</a>
+                    </li>
+                    <li>
+                        <a href="/en/snow-zones-map-italy">Snow zones of Italy (2010-2023)</a>
+                    </li>
+                </ul>
             </div>
             <h2>
-                <a name="HowMuch">How much is it ?</a>
+                <a name="WhatIs2">What is a wind zone ?</a>
             </h2>
             <div class="indexDiv">
-                <p>
-                    It is difficult to give a generic price, the costs vary according to the size of the project and its complexity.<br>
-                    The price is based on the time the engineer estimates or the number of elements to calculate.<br>
-                </p>
-                <p>In general, the cost of a structural engineer is largely paid for by the savings made by optimizing the volume of materials and the design so that it is easier to manufacture and assemble. In addition, his insurance covers damage in the event of a claim due to a design error and serenity is priceless. </p>
+                <p>Each country has set fundamental value of the basic wind velocity for each portion of its territory. The reference velocity corresponds to the average wind velocity over 10 minutes, measured at 10m above ground level on an 'open country' site with a return period of 50 years. The division is usually specified in the national annex of Eurocode 1 part 1-4. </p>
+                <ul>
+                    <li>
+                        <a href="/en/wind-zones-map-belgium">Wind zones of Belgium (2010-2023)</a>
+                    </li>
+                    <li>
+                        <a href="/en/wind-zones-map-france">Wind zones of France (2019-2023)</a>
+                    </li>
+                    <li>
+                        <a href="/en/wind-zones-map-italy">Wind zones of Italy (2010-2023)</a>
+                    </li>
+                </ul>
             </div>
             <h2>
-                <a name="StructuralEngineer">Where can I find a structural engineer ?</a>
+                <a name="WhatIs3">What is a seismic zone ?</a>
             </h2>
             <div class="indexDiv">
-                <p>
-                    It is very simple! Post your request for information on our <a href="/en/discussions">forum</a>
-                    in the « I need a structural engineer » category and choose a sub-category « Concrete / Steel / Timber / Aluminium ». 
-                </p>
-                <p>
-                    If you are at the pre-project stage, you can also study a technical solution with our <a href="/en/">structural calculation tools</a>
-                    . 
-                </p>
+                <p>Each country has set reference peak ground acceleration on type A ground for each portion of its territory. The type A ground has a stratigraphic profile like rock or other rock-like geological formation, including at most 5m of weaker material at the surface. The division is usually specified in the national annex of Eurocode 8 part 1-1. </p>
+                <ul>
+                    <li>
+                        <a href="/en/seismic-zones-map-belgium">Seismic zones of Belgium (2009-2023)</a>
+                    </li>
+                    <li>
+                        <a href="/en/seismic-zones-map-france">Seismic zones of France (2015-2023)</a>
+                    </li>
+                    <li>
+                        <a href="/en/seismic-zones-map-italy">Seismic zones of Italy (2006-2023)</a>
+                    </li>
+                </ul>
             </div>
+            <h2>
+                <a name="HowTo1">How to calculate snow on your building site ?</a>
+            </h2>
+            <div class="indexDiv">
+                <p>First, you need to calculate the value of snow on the ground at the relevant site : 
+                <ul>
+                    <li>
+                        depending on the <a href="#WhatIs1">snow zone</a>
+                        in which the building is located, according to the map taken from the national annex to the Eurocode 1 part 1-3.
+                    </li>
+                    <li>taking into account the effect of the elevation.</li>
+                </ul>
+</p><p>Then, you can take into account the annual probability of exceedence by calculating the ground snow load with a return period equivalent to the design working life of your building. </p>
+</div>
+<h2>
+    <a name="Why1">Why calculate peak velocity pressure by wind direction ?</a>
+</h2>
+<div class="indexDiv">
+    <div>
+        The wind direction is to be considered for several reasons :<br>
+        <ul>
+            <li>First, the high velocities of wind are observed more frequently in certain direction sectors; the directional factor accounts for this by authorizing a reduction when the wind comes from a direction where the probability of occurrence of strong winds is less.</li>
+            <li>On the other hand, the orography and the roughness of the terrain generally vary with the direction of the wind.</li>
+            <li>Finally, the pressure or force coefficients depend on the direction of the wind relative to the construction.</li>
+        </ul>
+    </div>
+</div>
+<h2>
+    <a name="HowTo2">How to calculate peak velocity pressure by wind direction ?</a>
+</h2>
+<div class="indexDiv">
+    <p>For the calculation of wind actions, only a few wind directions are considered; for example the normal directions to the facades in the case of buildings. </p>
+    <div>
+        To accurately determine the peak velocity pressure, you will have to take into account many parameters such as : 
+        <ul>
+            <li>
+                the <a href="#WhatIs2">wind zone</a>
+                according to the map taken from the national annex to the Eurocode 1 part 1-4. 
+            </li>
+            <li>
+                the <a href="/en/directional-factor-cdir">directional factor</a>
+                c<sub>dir</sub>
+                . 
+            </li>
+            <li>
+                the <a href="/en/probability-factor-cprob">annual probability of exceedence</a>
+                by calculating the basic wind velocity v<sub>b</sub>
+                with a return period equivalent to the design working life of your building. 
+            </li>
+            <li>
+                the <a href="/en/roughness-factor-crz">roughness factor</a>
+                c<sub>r(z)</sub>
+                , to take into account the effect of the environment (vegetation / urbanization). 
+            </li>
+            <li>
+                the <a href="/en/orography-factor-co">orography factor</a>
+                c<sub>o(z)</sub>
+                , to take in account the effect of terrain relief. 
+            </li>
+        </ul>
+    </div>
+    <div>
+        Then you can calculate the wind peak velocity pressure: <span id="qpz" style="font-size: small"></span>
+        <script>
+            katex.render("\\displaystyle q_{p(z)} = \\left[ 1 + 7 \\cdot I_{v(z)}\\right] \\cdot \\frac{1}{2} \\cdot \\rho \\cdot v_{m(z)}^{2} = c_{e(z)} \\cdot q_{b} ", document.getElementById('qpz'), {
+                throwOnError: false
+            });
+        </script>
+        <ul>
+            <li>
+                q<sub>p</sub>
+                is the pressure in newtons per square meter (N/m<sup>2</sup>
+                ).
+            </li>
+            <li>
+                I<sub>v(z)</sub>
+                is the turbulence intensity, at height z, defined as the standard deviation of the turbulence divided by the mean wind velocity.
+            </li>
+            <li>
+                &rho;is the air density in kilogram per cubic meter (kg/m<sup>3</sup>
+                ).
+            </li>
+            <li>
+                c<sub>e</sub>
+                is the exposure factor: <span id="ce" style="font-size: small"></span>
+                , with the basic velocity pressure <span id="qb" style="font-size: small"></span>
+                <script>
+                    katex.render("\\displaystyle c_{e(z)} = \\frac{q_{p(z)}}{q_{b}}", document.getElementById('ce'), {
+                        throwOnError: false
+                    });
+                </script>
+                <script>
+                    katex.render("\\displaystyle q_{b} = \\frac{1}{2} \\cdot \\rho \\cdot v_{b}^{2}", document.getElementById('qb'), {
+                        throwOnError: false
+                    });
+                </script>
+            </li>
+        </ul>
+    </div>
+</div>
+<h2>
+    <a name="HowTo3">How to calculate wind velocity from pressure ?</a>
+</h2>
+<div class="indexDiv">
+    <span id="wind_velocity" style="font-size: small"></span>
+    <br>
+    <script>
+        katex.render("\\displaystyle v = 3.6 \\cdot \\sqrt \\frac{q}{0.5 \\cdot \\rho} ", document.getElementById('wind_velocity'), {
+            throwOnError: false
+        });
+    </script>
+    <ul>
+        <li>v is the velocity in kilometers per hour (km/h).</li>
+        <li>
+            q is the pressure in newtons per square meter (N/m<sup>2</sup>
+            ).
+        </li>
+        <li>
+            &rho;is the air density in kilogram per cubic meter (kg/m<sup>3</sup>
+            ).
+        </li>
+    </ul>
+</div>
+<h2>
+    <a name="HowTo4">Do I need for seismic analysis ?</a>
+</h2>
+<div class="indexDiv">
+    <div>
+        <p>
+            In cases of very low seismicity, the provisions of Eurocode 8 need not be observed. <br>
+            It is recommended to consider as very low seismicity cases either those in which the design ground acceleration on type A ground, a<sub>g</sub>
+            = &gamma;<sub>I</sub>
+            . a<sub>gr</sub>
+            , is not greater than 0.39
+            <span class="unit">
+                m/s<sup>2</sup>
+            </span>
+            , or those where the product a<sub>g</sub>
+            S is not greater than 0.49
+            <span class="unit">
+                m/s<sup>2</sup>
+            </span>
+            . <br>
+            The <a href="#WhatIs3">seismic zones</a>
+            , the a<sub>gr</sub>
+            values and the chosen method may be found in national Annexes or in the law specific to each country. <span class="standard_reference">§3.2.1(5)</span>
+        </p>
+    </div>
+    <div>
+        <p>(Description of type A ground: Rock or other rock-like geological formation, including at most 5m of weaker Inaterial at the surface)</p>
+    </div>
+</div>
+<h2 class="title_as_h1">
+    <a name="Example">Example of results given by the software</a>
+</h2>
+<div class="indexDiv">
+    <a href="/en/eurocodes-zoning-versions" target="_blank" rel="nofollow noopener">See the features of Eurocodes Zoning</a>
+    <br>
+    Available in English/French, otherwise «Google Translate»! 
+    <div style="clear: left; page-break-inside: avoid !important; margin-top: 2em">
+        <h2 style="float:left">B1 - Localization</h2>
+        <div style="margin-top: -1.5em">
+            <img alt="French flag" height="512" width="512" style="height: 1.5em; width: 1.5em;" src="../../static/icons/flag_france.svg">
         </div>
-        <script async type="text/javascript" src="https://kit.fontawesome.com/2077bc9300.js" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="/static/gen/global.js?35c77856"></script>
-        <footer>
-            <div class="versionAndDesignerPosition" style="font-size: 0.6em; font-style: italic">
-                <span>
-                    <a style="color: white" href="/en/versions" target="_blank" rel="noopener">Show versions</a>
-                    - &copy;copyright 2018- 
-                </span>
-                - 
-                <span>
-                    <a style="color: white" href="/en/author-of-this-online-service" target="_blank" rel="noopener">St &eacute;phane PERRIN</a>
-                </span>
-                - 
-                <span>
-                    <a style="color: white" href="/en/legal-notices-GTU" target="_blank" rel="noopener">Legal notices / GTU</a>
-                </span>
+        <div class="resultDiv" style="clear: left; width: 100%;">
+            <label style="width: auto">Coordinates in World Geodetic System 1984 (WGS84) :</label>
+            <span>6.9511</span>
+            <span class="unit">°</span>
+            , <span style="margin-left: 0.5em">43.4979</span>
+            <span class="unit">°</span>
+            <br>
+            <label style="width: auto">Coordinates in French Geodetic System 1993 (Lambert 93) :</label>
+            <span>1019565</span>
+            <span class="unit">m</span>
+            , <span style="margin-left: 0.5em">6274536</span>
+            <span class="unit">m</span>
+            <br>
+            <div style="border-radius: 1em; z-index: 1; float: left">
+                <img src="../../static/img/EC_Zoning/Theoule-Map1.webp" alt="Large map that shows the building's position to determine snow, wind and seism zones" title="Large map that shows the building's position to determine snow, wind and seism zones">
             </div>
-        </footer>
-    </body>
-</html>
-<!DOCTYPE html>
-<html oncopy="return false" oncut="return false" lang="en" prefix="og: https://ogp.me/ns#">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="theme-color" content="#eee">
-        <link rel="manifest" crossorigin="use-credentials" href="/manifest.webmanifest">
-        <link rel="icon" type="image/png" href="/static/icons/favicon-96x96.png" sizes="96x96">
-        <link rel="icon" type="image/png" href="/static/icons/favicon-192x192.png" sizes="192x192">
-        <link rel="icon" type="image/png" href="/static/icons/favicon-512x512.png" sizes="512x512">
-        <link rel="apple-touch-icon" href="/static/icons/favicon-180x180.png" sizes="180x180">
-        <link rel="preconnect" href="https://ajax.googleapis.com">
-        <link rel="preconnect" href="https://cdn.jsdelivr.net">
-        <link rel="preconnect" href="https://kit-free.fontawesome.com">
-        <link rel="preload" href="../static/gen/fonts/KFOlCnqEu92Fr1MmSU5fChc4EsB.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-        <link rel="preload" type="text/css" href="/static/gen/global.css?aebecd19" as="style">
-        <link rel="stylesheet" type="text/css" href="/static/gen/global.css?aebecd19">
-        <title translate="no">Information on structural calculations | Eurocodes Tools</title>
-        <meta name="description" content="Are you looking for information on structural calculations, building design methods or software? Visit eurocodes-tools.com">
-        <script type="application/ld+json">
-            {
-                "@context": "http://schema.org",
-                "@type": "SoftwareApplication",
-                "name": "Eurocodes Tools",
-                "url": "https://eurocodes-tools.com/en/",
-                "author": {
-                    "@type": "Person",
-                    "name": "Stéphane PERRIN"
-                },
-                "applicationCategory": "structural analysis",
-                "image": "https://eurocodes-tools.com/static/icons/favicon-512x512.png",
-                "operatingSystem": "Web",
-                "requirements": "Chrome / Edge / Firefox / ...",
-                "screenshot": "https://eurocodes-tools.com/static/img/screenshot.webp",
-                "offers": {
-                    "@type": "Offer",
-                    "price": "0"
-                }
-            }</script>
-    </head>
-    <body>
-        <div class="phone"></div>
-        <div class="message">Please rotate your device! </div>
-        <header>
-            <div class="scale no-print">
-                <span class="main_menu_icon" title="Main menu" onclick="openMainNav()">
-                    <i class="fas fa-bars fa-2x"></i>
-                </span>
+            <div style="border-radius: 1em; z-index: 1;">
+                <img src="../../static/img/EC_Zoning/Theoule-Map2.webp" alt="Simple map that shows the building's position to determine snow, wind and seism zones" title="Simple map that shows the building's position to determine snow, wind and seism zones">
             </div>
-            <div id="mainNav" class="overlay">
-                <button href="javascript:void(0)" class="closebtn" onclick="closeMainNav()" style="background: none;border: none; padding: 0;">&times;</button>
-                <div class="overlay-content">
-                    <div class="title_as_h1" style="margin-top: 0.5em">Main</div>
-                    <div style="text-align: left; margin-left: 2em">
-                        <a href="/en/" title="Back to the main page !">
-                            <i class="fas fa-home"></i>
-                            Home
-                        </a>
-                        <br>
-                        <a href="/en/videos" title="Discover our structural calculation software in videos !">
-                            <i class="fas fa-film" style="margin-right: 0.5em"></i>
-                            Watch the videos
-                        </a>
-                        <br>
-                        <a href="/en/discussions" title="If you don't need help, maybe you can help someone !">
-                            <i class="fas fa-comments" style="margin-right: 0.5em"></i>
-                            See discussions or ask a question
-                        </a>
-                        <br>
-                        <button class="install-application" style="background: none;border: none; padding: 0;" title="More easily accessible and clearer !">
-                            <i class="fas fa-download" style="margin-right: 0.5em;"></i>
-                            Install the application
-                        </button>
-                        <script>
-                            if ('serviceWorker'in navigator) {
-                                // Register a service worker hosted at the root of the
-                                // site using the default scope.
-                                window.addEventListener('load', function() {
-                                    navigator.serviceWorker.register('../sw.js').then((reg)=>{// registration worked
-
-                                    }
-                                    ).catch((error)=>{
-                                        // registration failed
-                                        console.log('Error : ' + error);
-                                    }
-                                    );
-                                });
-                            } else {
-                                console.log('Service workers are not supported.');
+            <label style="width: 5em">Address :</label>
+            <span>06590 Théoule-sur-Mer, Provence-Alpes-Côte d &#39;Azur</span>
+            <br>
+        </div>
+        <h2>B2 - Elevations</h2>
+        <div class="resultDiv">
+            <div style="border-radius: 1em; z-index: 1; float: left; margin-right: 2em; margin-bottom: 2em">
+                <img src="../../static/img/EC_Zoning/Theoule-Map3.webp" alt="Elevation map to calculate orography factor" title="Elevation map to calculate orography factor">
+            </div>
+            <div style="width:29em; z-index: 1; float: left; margin-bottom: 2em">
+                <svg height="58.234038pt" version="1.1" viewbox="0 0 360 58.234038" width="360pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs>
+                        <style type="text/css">
+                            * {
+                                stroke-linecap: butt;
+                                stroke-linejoin: round
                             }
-                        </script>
-                    </div>
-                    <div class="title_as_h1" style="margin-top: 0.5em">User account</div>
-                    <div style="text-align: left; margin-left: 2em">
-                        <a href="/log-to-my-account" title="Enjoy all the advantages of your account !">
-                            <i class="fas fa-sign-in-alt"></i>
-                            Login
-                        </a>
-                        <br>
-                        <div title="Select your language !">
-                            <i class="fa fa-language" aria-hidden="true" style="color: white; margin-right: 1em"></i>
-                            <a href="/en/what-are-structural-calculations" style="display: inline-block;
-                                           border: 2px solid #88dd00; border-radius: 1em">
-                                <img alt="/en/what-are-structural-calculations" style="width: 1.5em" src="../../static/icons/flag_uk.svg" width="24px" height="24px">
-                            </a>
-                            <a href="/fr/qu-est-ce-que-le-calcul-de-structure" style="display: inline-block;
-                                           ">
-                                <img alt="/fr/qu-est-ce-que-le-calcul-de-structure" style="width: 1.5em" src="../../static/icons/flag_france.svg" width="24px" height="24px">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="title_as_h1" style="margin-top: 0.5em">Eurocodes Tools software</div>
-                    <div style="text-align: left; margin-left: -2em">
-                        <ul style="list-style-type: none;">
-                            <li style="margin-top: 1em">
-                                <span class="title_as_h2" style="color: white">Eurocode 1 - Actions on buildings</span>
-                                <ul style="list-style-type: none;">
-                                    <li style="margin-top: 1.5em">
-                                        <a class="software-button" href="/en/eurocodes-zoning">
-                                            <span style="font-family: 'Roboto', sans-serif; color: #777777; text-transform: uppercase;" translate="no">
-                                                <span style=" margin-right: 0.3em;
-                    display: inline-block;  /* required for transform */
-                    z-index: 10;">Eurocodes</span>
-                                                <span style="color: #dc006c;
-                    display: inline-block;/* required for transform */
-                    z-index: 0;">Zoning</span>
-                                            </span>
-                                        </a>
-                                        <a href="/en/zone-snow-wind-seism-explanations" class="no-print">
-                                            <i class="fas fa-info-circle show_explanations" style="color: white"></i>
-                                            <span class="moreInfo" style="color: white">What are snow, wind and seismic zones?</span>
-                                        </a>
-                                    </li>
-                                    <li style="margin-top: 1.5em">
-                                        <a class="software-button" href="/en/canopy-roofs">
-                                            <span style="font-family: 'Roboto', sans-serif; color: #777777; text-transform: uppercase;" translate="no">
-                                                <span style=" margin-right: 0.3em;
-                    display: inline-block;  /* required for transform */
-                    z-index: 10;">Canopy</span>
-                                                <span style="color: #dc006c;
-                    display: inline-block;/* required for transform */
-                    z-index: 0;">Roofs</span>
-                                            </span>
-                                        </a>
-                                        <a href="/en/canopy-roofs-explanations" class="no-print">
-                                            <i class="fas fa-info-circle show_explanations" style="color: white"></i>
-                                            <span class="moreInfo" style="color: white">What are canopy roofs ?</span>
-                                        </a>
-                                    </li>
-                                    <li style="margin-top: 1.5em">
-                                        <a class="software-button" href="/en/usage-loads">
-                                            <span style="font-family: 'Roboto', sans-serif; color: #777777; text-transform: uppercase;" translate="no">
-                                                <span style=" margin-right: 0.3em;
-                    display: inline-block;  /* required for transform */
-                    z-index: 10;">Usage</span>
-                                                <span style="color: #dc006c;
-                    display: inline-block;/* required for transform */
-                    z-index: 0;">Loads</span>
-                                            </span>
-                                        </a>
-                                        <a href="/en/imposed-loads-explanations" class="no-print">
-                                            <i class="fas fa-info-circle show_explanations" style="color: white"></i>
-                                            <span class="moreInfo" style="color: white">What are imposed loads?</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li style="margin-top: 1em">
-                                <span class="title_as_h2" style="color: white">Eurocode 3 - Steel structures</span>
-                                <ul style="list-style-type: none;">
-                                    <li style="margin-top: 1.5em">
-                                        <a class="software-button" href="/en/cranerunways">
-                                            <span style="font-family: 'Roboto', sans-serif; color: #777777; text-transform: uppercase;" translate="no">
-                                                <span style=" margin-right: 0.3em;
-                    display: inline-block;  /* required for transform */
-                    z-index: 10;">Crane</span>
-                                                <span style="color: #dc006c;
-                    display: inline-block;/* required for transform */
-                    z-index: 0;">RunWays</span>
-                                            </span>
-                                        </a>
-                                        <a href="/en/crane-runways-explanations" class="no-print">
-                                            <i class="fas fa-info-circle show_explanations" style="color: white"></i>
-                                            <span class="moreInfo" style="color: white">How to calculate crane runways?</span>
-                                        </a>
-                                    </li>
-                                    <li style="margin-top: 1.5em">
-                                        <a class="software-button" href="/en/lifting-point">
-                                            <span style="font-family: 'Roboto', sans-serif; color: #777777; text-transform: uppercase;" translate="no">
-                                                <span style=" margin-right: 0.3em;
-                    display: inline-block;  /* required for transform */
-                    z-index: 10;">Lifting</span>
-                                                <span style="color: #dc006c;
-                    display: inline-block;/* required for transform */
-                    z-index: 0;">Point</span>
-                                            </span>
-                                        </a>
-                                        <a href="/en/lifting-lugs-explanations" class="no-print">
-                                            <i class="fas fa-info-circle show_explanations" style="color: white"></i>
-                                            <span class="moreInfo" style="color: white">How to calculate lifting lugs?</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li style="margin-top: 1em">
-                                <span class="title_as_h2" style="color: white">Eurocode 5 - Timber structures</span>
-                                <ul style="list-style-type: none;"></ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <script type="application/javascript">
-                function openMainNav() {
-                    document.getElementById("mainNav").style.width = "100%";
-                }
-
-                function closeMainNav() {
-                    document.getElementById("mainNav").style.width = "0%";
-                }
-            </script>
-            <div class="page_header">
-                <span class="logo logoSize" translate="no">
-                    <span class="word1">Eurocodes</span>
-                    <span class="word2">Tools</span>
-                </span>
-                <div class="taglineSize">Online structural analysis service</div>
-            </div>
-        </header>
-        <hr style="float:left; width: 94%; margin-top: 1em; margin-left: 2em">
-        <div class="container">
-            <div class="summary summarySize no-print">
-                <i class="fas fa-book" style="margin-left: 1em; margin-right: 0.5em"></i>
-                <span style="font-weight: bold;">Choose a chapter</span>
-                <ul>
-                    <li>
-                        <a href="#WhatIs">What are structural calculations ?</a>
-                    </li>
-                    <li>
-                        <a href="#Need">Is it essential ?</a>
-                    </li>
-                    <li>
-                        <a href="#HowMuch">How much is it ?</a>
-                    </li>
-                    <li>
-                        <a href="#StructuralEngineer">Where can I find a structural engineer ?</a>
-                    </li>
-                </ul>
-                <hr>
-                <a href="/en/discussions" style="margin-left: 1em">
-                    <i class="fas fa-comments" style="margin-right: 0.5em"></i>
-                    <span style="font-size: small">See discussions or ask a question</span>
-                </a>
-                <ul style="font-size: small">
-                    <li>
-                        <span style="font-weight: bold">General topics</span>
-                        <ul>
-                            <li onclick="document.location='/generalities-demande-acces'" style="font-size: smaller">
-                                <a lang="fr" href="/fr/generalities-demande-acces">Demande d acces</a>
-                            </li>
-                            <li onclick="document.location='/generalities-logiciel-photovoltaic-shelters'" style="font-size: smaller">
-                                <a lang="fr" href="/fr/generalities-logiciel-photovoltaic-shelters">Logiciel Photovoltaic Shelters</a>
-                            </li>
-                            <li onclick="document.location='/generalities-calcul-ombrieres'" style="font-size: smaller">
-                                <a lang="fr" href="/fr/generalities-calcul-ombrieres">Calcul ombrieres PV</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <span style="font-weight: bold">Eurocodes calculation tools</span>
-                        <ul>
-                            <li onclick="document.location='/ectools-report-error-canopy-roofs-choix-plusieurs-pans'" style="font-size: smaller">
-                                <a lang="fr" href="/fr/ectools-report-error-canopy-roofs-choix-plusieurs-pans">Canopy Roofs choix plusieurs pans</a>
-                            </li>
-                            <li onclick="document.location='/ectools-tests-software-tester-logiciel-ombriere'" style="font-size: smaller">
-                                <a lang="fr" href="/fr/ectools-tests-software-tester-logiciel-ombriere">tester le logiciel ombriere</a>
-                            </li>
-                            <li onclick="document.location='/ectools-tests-software-logiciel'" style="font-size: smaller">
-                                <a lang="fr" href="/fr/ectools-tests-software-logiciel">Logiciel PV</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <span style="font-weight: bold">Eurocode 1 - Actions on structures</span>
-                        <ul>
-                            <li onclick="document.location='/ec1-1-4-cscd-ombrieres'" style="font-size: smaller">
-                                <a lang="fr" href="/fr/ec1-1-4-cscd-ombrieres">CsCd ombrieres</a>
-                            </li>
-                            <li onclick="document.location='/ec1-1-1-comment-determiner-les-charge'" style="font-size: smaller">
-                                <a lang="fr" href="/fr/ec1-1-1-comment-determiner-les-charge">comment determiner les charge </a>
-                            </li>
-                            <li onclick="document.location='/ec1-1-4-Obstruction-sous-toiture-isolée'" style="font-size: smaller">
-                                <a lang="fr" href="/fr/ec1-1-4-Obstruction-sous-toiture-isol%C3%A9e">Obstruction sous toiture isolee</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <span style="font-weight: bold">Eurocode 2 - Concrete structures</span>
-                        <ul>
-                            <li onclick="document.location='/ec2-4-shear-with-lever-arm'" style="font-size: smaller">
-                                <a href="/en/ec2-4-shear-with-lever-arm">Shear with Lever arm</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <span style="font-weight: bold">Eurocode 3 - Steel structures</span>
-                        <ul>
-                            <li onclick="document.location='/ec3-6-top-grider'" style="font-size: smaller">
-                                <a href="/en/ec3-6-top-grider">Top grider</a>
-                            </li>
-                            <li onclick="document.location='/ec3-1-8-Bearing-check-of-lifting-lug'" style="font-size: smaller">
-                                <a href="/en/ec3-1-8-Bearing-check-of-lifting-lug">Bearing check of lifting lug</a>
-                            </li>
-                            <li onclick="document.location='/ec3-1-8-dimensionnement-oreille-levage'" style="font-size: smaller">
-                                <a lang="fr" href="/fr/ec3-1-8-dimensionnement-oreille-levage">dimensionnement oreille de levage</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <span style="font-weight: bold">Eurocode 5 - Timber structures</span>
-                        <ul>
-                            <li onclick="document.location='/ec5-1-1-section-8-Assemblages-boulonnes-bois-sur-bois'" style="font-size: smaller">
-                                <a lang="fr" href="/fr/ec5-1-1-section-8-Assemblages-boulonnes-bois-sur-bois">Assemblages boulonnes bois sur bois</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <span style="font-weight: bold">Eurocode 8 - Earthquake resistance</span>
-                        <ul>
-                            <li onclick="document.location='/ec8-1-ground-type-map'" style="font-size: smaller">
-                                <a href="/en/ec8-1-ground-type-map">Ground type map</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <hr>
-                <a href="/en/" style="margin-left: 1em">
-                    <i class="fas fa-home" style="margin-right: 0.5em"></i>
-                    Return &nbsp;to &nbsp;home &nbsp;page 
-                </a>
-            </div>
-            <h1>Information on structural calculations</h1>
-            <h2>
-                <a name="WhatIs">What are structural calculations ?</a>
-            </h2>
-            <div class="indexDiv">
-                <p>
-                    The structural calculations according to the <a href="/en/all-eurocodes">Eurocodes</a>
-                    are the verifications of the resistance, equilibrium and deformation of a building by a mathematical calculation based on the basis of indications from European construction standards. 
-                </p>
-                <p>The calculations take into account the actions applied to the building (arising from occupancy, climatic, seismic, fire, ...), the characteristics of the foundation soil, the materials used to make the structure (concrete, steel, wood, aluminum, ...) and the reliability objectives to be achieved (which is not the same for a hospital as for a warehouse). </p>
-                <p>
-                    These calculations can be complex and must be carried out as part of a structure design process by a competent person, the <a href="#StructuralEngineer">structural engineer</a>
-                    . 
-                </p>
-            </div>
-            <h2>
-                <a name="Need">Is it essential ?</a>
-            </h2>
-            <div class="indexDiv">
-                <p>Any new building, extension or rehabilitation will require structural checks by calculation. These calculations make it possible to choose the right construction components and the appropriate size to ensure the stability, solidity and sufficient rigidity of the structure. </p>
-                <p>If the project is located at altitude, the snow load can be high. By the seaside, on a hill or in open terrain, the wind can be more powerful. In some areas, the structure of the building could also be subject to seismic effects. It is also often necessary to ensure that the structure is able to resist a fire for a sufficient time to evacuate and that the firefighters can intervene. </p>
-                <p>It is therefore important to carry out structural calculations to anticipate exceptional phenomena and prove the design of the building in the event of a disaster. </p>
-            </div>
-            <h2>
-                <a name="HowMuch">How much is it ?</a>
-            </h2>
-            <div class="indexDiv">
-                <p>
-                    It is difficult to give a generic price, the costs vary according to the size of the project and its complexity.<br>
-                    The price is based on the time the engineer estimates or the number of elements to calculate.<br>
-                </p>
-                <p>In general, the cost of a structural engineer is largely paid for by the savings made by optimizing the volume of materials and the design so that it is easier to manufacture and assemble. In addition, his insurance covers damage in the event of a claim due to a design error and serenity is priceless. </p>
-            </div>
-            <h2>
-                <a name="StructuralEngineer">Where can I find a structural engineer ?</a>
-            </h2>
-            <div class="indexDiv">
-                <p>
-                    It is very simple! Post your request for information on our <a href="/en/discussions">forum</a>
-                    in the « I need a structural engineer » category and choose a sub-category « Concrete / Steel / Timber / Aluminium ». 
-                </p>
-                <p>
-                    If you are at the pre-project stage, you can also study a technical solution with our <a href="/en/">structural calculation tools</a>
-                    . 
-                </p>
+                        </style>
+                    </defs>
+                    <g id="figure_1">
+                        <g id="patch_1">
+                            <path d="M 0 58.234038
+L 360 58.234038
+L 360 -0
+L 0 -0
+z
+" style="fill:#ffffff;"/>
+                        </g>
+                        <g id="axes_1">
+                            <g id="line2d_1">
+                                <path clip-path="url(#pabc795e9f9)" d="M 64.859943 44.548476
+" style="fill:none;stroke:#ff0000;stroke-linecap:square;stroke-width:1.5;"/>
+                                <defs>
+                                    <path d="M 0 -3
+L -0.673542 -0.927051
+L -2.85317 -0.927051
+L -1.089814 0.354102
+L -1.763356 2.427051
+L -0 1.145898
+L 1.763356 2.427051
+L 1.089814 0.354102
+L 2.85317 -0.927051
+L 0.673542 -0.927051
+z
+" id="m72c158be1f" style="stroke:#ff0000;stroke-linejoin:bevel;"/>
+                                </defs>
+                                <g clip-path="url(#pabc795e9f9)">
+                                    <use style="fill:#ff0000;stroke:#ff0000;stroke-linejoin:bevel;" x="64.859943" xlink:href="#m72c158be1f" y="44.548476"/>
+                                </g>
+                            </g>
+                            <g id="line2d_2">
+                                <path clip-path="url(#pabc795e9f9)" d="M 16.363636 55.587036
+" style="fill:none;stroke:#772222;stroke-linecap:square;stroke-width:1.5;"/>
+                                <defs>
+                                    <path d="M 0 1.5
+C 0.397805 1.5 0.77937 1.341951 1.06066 1.06066
+C 1.341951 0.77937 1.5 0.397805 1.5 0
+C 1.5 -0.397805 1.341951 -0.77937 1.06066 -1.06066
+C 0.77937 -1.341951 0.397805 -1.5 0 -1.5
+C -0.397805 -1.5 -0.77937 -1.341951 -1.06066 -1.06066
+C -1.341951 -0.77937 -1.5 -0.397805 -1.5 0
+C -1.5 0.397805 -1.341951 0.77937 -1.06066 1.06066
+C -0.77937 1.341951 -0.397805 1.5 0 1.5
+z
+" id="m1b92b8dda3" style="stroke:#772222;"/>
+                                </defs>
+                                <g clip-path="url(#pabc795e9f9)">
+                                    <use style="fill:#772222;stroke:#772222;" x="16.363636" xlink:href="#m1b92b8dda3" y="55.587036"/>
+                                </g>
+                            </g>
+                            <g id="line2d_3">
+                                <path clip-path="url(#pabc795e9f9)" d="M 173.685957 2.647002
+" style="fill:none;stroke:#88dd00;stroke-linecap:square;stroke-width:1.5;"/>
+                                <defs>
+                                    <path d="M 0 1.5
+C 0.397805 1.5 0.77937 1.341951 1.06066 1.06066
+C 1.341951 0.77937 1.5 0.397805 1.5 0
+C 1.5 -0.397805 1.341951 -0.77937 1.06066 -1.06066
+C 0.77937 -1.341951 0.397805 -1.5 0 -1.5
+C -0.397805 -1.5 -0.77937 -1.341951 -1.06066 -1.06066
+C -1.341951 -0.77937 -1.5 -0.397805 -1.5 0
+C -1.5 0.397805 -1.341951 0.77937 -1.06066 1.06066
+C -0.77937 1.341951 -0.397805 1.5 0 1.5
+z
+" id="m45dd653ca4" style="stroke:#88dd00;"/>
+                                </defs>
+                                <g clip-path="url(#pabc795e9f9)">
+                                    <use style="fill:#88dd00;stroke:#88dd00;" x="173.685957" xlink:href="#m45dd653ca4" y="2.647002"/>
+                                </g>
+                            </g>
+                            <g id="line2d_4">
+                                <path clip-path="url(#pabc795e9f9)" d="M 16.363636 55.587036
+L 28.465353 54.460652
+L 40.56707 46.35069
+L 52.668787 46.35069
+L 64.770504 44.548476
+L 76.872221 41.845155
+L 88.973938 38.240727
+L 101.075655 33.509915
+L 113.177372 29.00438
+L 125.279089 22.921908
+L 137.380806 18.416374
+L 149.482523 18.416374
+L 161.58424 4.449216
+L 173.685957 2.647002
+" style="fill:none;stroke:#000000;stroke-linecap:square;stroke-width:0.4;"/>
+                            </g>
+                            <g id="line2d_5">
+                                <path clip-path="url(#pabc795e9f9)" d="M 16.363636 55.587036
+L 173.685957 2.647002
+" style="fill:none;stroke:#008000;stroke-dasharray:3.84,0.96,0.6,0.96;stroke-dashoffset:0;stroke-width:0.6;"/>
+                            </g>
+                            <g id="line2d_6">
+                                <path clip-path="url(#pabc795e9f9)" d="M 343.636364 45.449583
+" style="fill:none;stroke:#0077ee;stroke-linecap:square;stroke-width:1.5;"/>
+                                <defs>
+                                    <path d="M 0 1.5
+C 0.397805 1.5 0.77937 1.341951 1.06066 1.06066
+C 1.341951 0.77937 1.5 0.397805 1.5 0
+C 1.5 -0.397805 1.341951 -0.77937 1.06066 -1.06066
+C 0.77937 -1.341951 0.397805 -1.5 0 -1.5
+C -0.397805 -1.5 -0.77937 -1.341951 -1.06066 -1.06066
+C -1.341951 -0.77937 -1.5 -0.397805 -1.5 0
+C -1.5 0.397805 -1.341951 0.77937 -1.06066 1.06066
+C -0.77937 1.341951 -0.397805 1.5 0 1.5
+z
+" id="m391dffa5cf" style="stroke:#0077ee;"/>
+                                </defs>
+                                <g clip-path="url(#pabc795e9f9)">
+                                    <use style="fill:#0077ee;stroke:#0077ee;" x="343.636364" xlink:href="#m391dffa5cf" y="45.449583"/>
+                                </g>
+                            </g>
+                            <g id="line2d_7">
+                                <path clip-path="url(#pabc795e9f9)" d="M 173.685957 2.647002
+" style="fill:none;stroke:#88dd00;stroke-linecap:square;stroke-width:1.5;"/>
+                                <g clip-path="url(#pabc795e9f9)">
+                                    <use style="fill:#88dd00;stroke:#88dd00;" x="173.685957" xlink:href="#m45dd653ca4" y="2.647002"/>
+                                </g>
+                            </g>
+                            <g id="line2d_8">
+                                <path clip-path="url(#pabc795e9f9)" d="M 343.636364 45.449583
+L 330.563255 46.801243
+L 317.490147 46.801243
+L 304.417039 40.493494
+L 291.343931 36.438513
+L 278.270823 31.707701
+L 265.197715 23.372462
+L 252.124606 23.372462
+L 239.051498 18.866927
+L 225.97839 14.586669
+L 212.905282 10.531688
+L 199.832174 4.674492
+L 186.759066 4.674492
+L 173.685957 2.647002
+" style="fill:none;stroke:#000000;stroke-linecap:square;stroke-width:0.4;"/>
+                            </g>
+                            <g id="line2d_9">
+                                <path clip-path="url(#pabc795e9f9)" d="M 343.636364 45.449583
+L 173.685957 2.647002
+" style="fill:none;stroke:#ffa500;stroke-dasharray:3.84,0.96,0.6,0.96;stroke-dashoffset:0;stroke-width:0.6;"/>
+                            </g>
+                        </g>
+                    </g>
+                    <defs>
+                        <clippath id="pabc795e9f9">
+                            <rect height="58.234038" width="360" x="0" y="-0"/>
+                        </clippath>
+                    </defs>
+                </svg>
+                <table class="table-bordered resultsTable" style="margin-left: 1em">
+                    <tr>
+                        <th style="min-width: 15em">Coordinates</th>
+                        <td style="min-width: 5em;background-color: #772222; color: white">
+                            6.9536<span class="unit">°</span>
+                            <br>
+                            43.4972<span class="unit">°</span>
+                        </td>
+                        <td style="min-width: 5em;background-color: #88dd00; color: white">
+                            6.9455<span class="unit">°</span>
+                            <br>
+                            43.4994<span class="unit">°</span>
+                        </td>
+                        <td style="min-width: 5em;background-color: #88dd00; color: white">
+                            6.9455<span class="unit">°</span>
+                            <br>
+                            43.4994<span class="unit">°</span>
+                        </td>
+                        <td style="min-width: 5em;background-color: #0077ee; color: white">
+                            6.9368<span class="unit">°</span>
+                            <br>
+                            43.5019<span class="unit">°</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Elevations</th>
+                        <td style="background-color: #772222; color: white">
+                            9<span class="unit">m</span>
+                        </td>
+                        <td style="background-color: #88dd00; color: white">
+                            244<span class="unit">m</span>
+                        </td>
+                        <td style="background-color: #88dd00; color: white">
+                            244<span class="unit">m</span>
+                        </td>
+                        <td style="background-color: #0077ee; color: white">
+                            54<span class="unit">m</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Obstacle effective height H</th>
+                        <td colspan="2" style="background-color: green; color: white">
+                            235<span class="unit">m</span>
+                        </td>
+                        <td colspan="2" style="background-color: orange; color: white">
+                            190<span class="unit">m</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Slope actual length L<sub>u</sub>
+                            / L<sub>d</sub>
+                        </th>
+                        <td colspan="2" style="background-color: green; color: white">
+                            698.4<span class="unit">m</span>
+                        </td>
+                        <td colspan="2" style="background-color: orange; color: white">
+                            754.4<span class="unit">m</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Slope angle &Phi;</th>
+                        <td colspan="2" style="background-color: green; color: white">
+                            33.7<span class="unit">%</span>
+                        </td>
+                        <td colspan="2" style="background-color: orange; color: white">
+                            25.2<span class="unit">%</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Horizontal distance site/top x</th>
+                        <td colspan="4">
+                            483.1<span class="unit">m</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Elevation at the place of construction</th>
+                        <td colspan="4">
+                            58<span class="unit">m</span>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
-        <script async type="text/javascript" src="https://kit.fontawesome.com/2077bc9300.js" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="/static/gen/global.js?35c77856"></script>
-        <footer>
-            <div class="versionAndDesignerPosition" style="font-size: 0.6em; font-style: italic">
+        <h2 style="clear: left;">B3 - Building</h2>
+        <div class="resultDiv">
+            <div>
+                <label style="width: 15em">Type of building :</label>
+                <span>common structure</span>
+            </div>
+            <div>
+                <label style="width: 15em;">Design working life category :</label>
                 <span>
-                    <a style="color: white" href="/en/versions" target="_blank" rel="noopener">Show versions</a>
-                    - &copy;copyright 2018- 
-                </span>
-                - 
-                <span>
-                    <a style="color: white" href="/en/author-of-this-online-service" target="_blank" rel="noopener">St &eacute;phane PERRIN</a>
-                </span>
-                - 
-                <span>
-                    <a style="color: white" href="/en/legal-notices-GTU" target="_blank" rel="noopener">Legal notices / GTU</a>
+                    50<span class="unit">years</span>
                 </span>
             </div>
-        </footer>
-    </body>
-</html>
+            <div>
+                <label style="width: 15em">Max height :</label>
+                <span>8.0</span>
+                <span class="unit">m</span>
+            </div>
+            <div>
+                <label style="width: 15em;">Orientation from North :</label>
+                <span>15</span>
+                <span class="unit">°</span>
+            </div>
+        </div>
+        <h2 style="page-break-before: always">B4 - Terrain categories</h2>
+        <div class="resultDiv" style="clear: right;">
+            <div style="border-radius: 1em; z-index: 1; float: left; margin-bottom: 2em">
+                <img src="../../static/img/EC_Zoning/Theoule-Map4.webp" alt="Terrain map">
+            </div>
+            <table class="table-bordered resultsTable" style="margin-left: 50%">
+                <tr>
+                    <th>Sectors</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                </tr>
+                <tr>
+                    <th>Categories</th>
+                    <td>IIIb</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>IIIb</td>
+                </tr>
+            </table>
+            <div style="margin-left: 50%; width: 25em">
+                <span style="font-size: small">
+                    Radius R of the angular sector : 300<span class="unit">m</span>
+                </span>
+            </div>
+        </div>
+        <h2 style="clear: left;">
+            C1 - Snow <span class="standard_reference">NF EN 1991-1-3/NA (may 2007) + A1 (july 2011)</span>
+        </h2>
+        <div class="resultDiv">
+            <div style="float: left; margin-right: 2em;">
+                <label style="width: 5em">Zone :</label>
+                <span>A2</span>
+                <span style="font-size: small">
+                    (
+                    <span>
+                        s<sub>k,0</sub>
+                        = 0.45
+                    </span>
+                    <span class="unit">
+                        kN/m<sup>2</sup>
+                    </span>
+                    )
+                </span>
+            </div>
+            <div style="display:inline-block; font-size: small; padding-bottom: 0.4em">
+                <label style="width: auto">Criteria for zoning :</label>
+                <span>MANDELIEU-LA-NAPOULE</span>
+                ,<span>ALPES-MARITIMES</span>
+                (<span>06</span>
+                ) 
+            </div>
+            <div>
+                <label style="width: auto">Characteristic value of snow on the ground at the relevant site :</label>
+                <div style="display: inline-block">
+                    <span>
+                        s
+                        <sub>
+                            k,58<span class="unit">m</span>
+                        </sub>
+                        = 0.45
+                    </span>
+                    <span class="unit">
+                        kN/m<sup>2</sup>
+                    </span>
+                </div>
+                <br>
+                <label style="width: auto">Ground snow load with a return period of 50 years :</label>
+                <div style="display: inline-block">
+                    <span>
+                        s
+                        <sub>
+                            50<span class="unit">ans</span>
+                        </sub>
+                        = 0.45
+                    </span>
+                    <span class="unit">
+                        kN/m<sup>2</sup>
+                    </span>
+                </div>
+                <br>
+                <label style="width: auto;">Design value of exceptional snow load on the ground :</label>
+                <div style="display: inline-block">
+                    <span>
+                        s<sub>ad</sub>
+                        = 1.0
+                    </span>
+                    <span class="unit">
+                        kN/m<sup>2</sup>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <h2>
+            C2 - Wind <span class="standard_reference">NF EN 1991-1-4/NA (march 2008) + A1 (july 2011) + A2 (september 2012) + A3 (april 2019)</span>
+        </h2>
+        <div class="resultDiv">
+            <div style="float: left;margin-right: 2em;">
+                <label style="width: 5em">Zone :</label>
+                <span>2</span>
+                <span style="font-size: small">
+                    (
+                    <span>
+                        v<sub>b,0</sub>
+                        = 24.0
+                    </span>
+                    <span class="unit">m/s</span>
+                    )
+                </span>
+            </div>
+            <div style="display: inline-block; font-size: small; padding-bottom: 0.4em">
+                <label style="width: auto">Criteria for zoning :</label>
+                <span>THEOULE-SUR-MER</span>
+                , <span>ALPES-MARITIMES</span>
+                (<span>06</span>
+                ) 
+            </div>
+            <div>
+                <label style="width: 5em">
+                    Zone c<sub>dir</sub>
+                    :
+                </label>
+                <span>3</span>
+            </div>
+            <table class="table-bordered resultsTable">
+                <tr>
+                    <th style="width: 40em">Sectors</th>
+                    <th style="width: 10em">1</th>
+                    <th style="width: 10em">2</th>
+                    <th style="width: 10em">3</th>
+                    <th style="width: 10em">4</th>
+                </tr>
+                <tr>
+                    <th>Sector definition</th>
+                    <td>
+                        from 330<span class="unit">°</span>
+                        to 60<span class="unit">°</span>
+                    </td>
+                    <td>
+                        from 60<span class="unit">°</span>
+                        to 150<span class="unit">°</span>
+                    </td>
+                    <td>
+                        from 150<span class="unit">°</span>
+                        to 240<span class="unit">°</span>
+                    </td>
+                    <td>
+                        from 240<span class="unit">°</span>
+                        to 330<span class="unit">°</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Fundamental value of the basic wind velocity v<sub>b,0</sub>
+                    </th>
+                    <td colspan="4">
+                        24.0<span class="unit">m/s</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Shape parameter K</th>
+                    <td colspan="4">0.2</td>
+                </tr>
+                <tr>
+                    <th>Exponent n</th>
+                    <td colspan="4">0.5</td>
+                </tr>
+                <tr>
+                    <th>Annual probability of exceedence p</th>
+                    <td colspan="4">0.02</td>
+                </tr>
+                <tr>
+                    <th>
+                        Probability factor c<sub>prob</sub>
+                    </th>
+                    <td colspan="4">1.0</td>
+                </tr>
+                <tr>
+                    <th>
+                        Directional factor c<sub>dir</sub>
+                    </th>
+                    <td>1.0</td>
+                    <td>0.85</td>
+                    <td>0.85</td>
+                    <td>1.0</td>
+                </tr>
+                <tr>
+                    <th>
+                        Basic wind velocity v<sub>b</sub>
+                    </th>
+                    <td>
+                        24.0<span class="unit">m/s</span>
+                    </td>
+                    <td>
+                        20.4<span class="unit">m/s</span>
+                    </td>
+                    <td>
+                        20.4<span class="unit">m/s</span>
+                    </td>
+                    <td>
+                        24.0<span class="unit">m/s</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Reference roughness length z<sub>0,II</sub>
+                    </th>
+                    <td colspan="4">
+                        0.05<span class="unit">m</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Roughness length z<sub>0</sub>
+                    </th>
+                    <td>
+                        0.5<span class="unit">m</span>
+                    </td>
+                    <td>
+                        0.005<span class="unit">m</span>
+                    </td>
+                    <td>
+                        0.005<span class="unit">m</span>
+                    </td>
+                    <td>
+                        0.5<span class="unit">m</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Terrain factor k<sub>r</sub>
+                    </th>
+                    <td>0.223</td>
+                    <td>0.162</td>
+                    <td>0.162</td>
+                    <td>0.223</td>
+                </tr>
+                <tr>
+                    <th>Height above ground z</th>
+                    <td colspan="4">
+                        8.0<span class="unit">m</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Minimum height z<sub>min</sub>
+                    </th>
+                    <td>
+                        9.0<span class="unit">m</span>
+                    </td>
+                    <td>
+                        1.0<span class="unit">m</span>
+                    </td>
+                    <td>
+                        1.0<span class="unit">m</span>
+                    </td>
+                    <td>
+                        9.0<span class="unit">m</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Roughness factor c<sub>r(z)</sub>
+                    </th>
+                    <td>0.645</td>
+                    <td>1.193</td>
+                    <td>1.193</td>
+                    <td>0.645</td>
+                </tr>
+                <tr>
+                    <th>Obstacle type</th>
+                    <td colspan="4">isolated hills</td>
+                </tr>
+                <tr>
+                    <th>Exposure type</th>
+                    <td>-</td>
+                    <td>upwind</td>
+                    <td>-</td>
+                    <td>downwind</td>
+                </tr>
+                <tr>
+                    <th>
+                        Factor depending on the type and dimensions of the obstacle s <sub>max</sub>
+                    </th>
+                    <td>0.0</td>
+                    <td>0.8</td>
+                    <td>0.0</td>
+                    <td>0.8</td>
+                </tr>
+                <tr>
+                    <th>
+                        Orography factor<sup>*</sup>
+                        c<sub>o(z)</sub>
+                    </th>
+                    <td>1.0</td>
+                    <td>1.235</td>
+                    <td>1.0</td>
+                    <td>1.112</td>
+                </tr>
+                <tr>
+                    <th>
+                        Mean wind velocity v<sub>m(z)</sub>
+                    </th>
+                    <td>
+                        15.5<span class="unit">m/s</span>
+                    </td>
+                    <td>
+                        30.1<span class="unit">m/s</span>
+                    </td>
+                    <td>
+                        24.3<span class="unit">m/s</span>
+                    </td>
+                    <td>
+                        17.2<span class="unit">m/s</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Turbulence factor k<sub>l</sub>
+                    </th>
+                    <td>0.923</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>0.923</td>
+                </tr>
+                <tr>
+                    <th>
+                        Standard deviation of the turbulence &sigma;<sub>v</sub>
+                    </th>
+                    <td>
+                        4.943<span class="unit">m/s</span>
+                    </td>
+                    <td>
+                        3.299<span class="unit">m/s</span>
+                    </td>
+                    <td>
+                        3.299<span class="unit">m/s</span>
+                    </td>
+                    <td>
+                        4.943<span class="unit">m/s</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Turbulence intensity I<sub>v(z)</sub>
+                    </th>
+                    <td>0.319</td>
+                    <td>0.11</td>
+                    <td>0.136</td>
+                    <td>0.287</td>
+                </tr>
+                <tr>
+                    <th>Air density &rho;</th>
+                    <td colspan="4">
+                        1.225
+                        <span class="unit">
+                            kg/m<sup>3</sup>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Exposure factor c<sub>e(z)</sub>
+                    </th>
+                    <td>1.347</td>
+                    <td>3.84</td>
+                    <td>2.774</td>
+                    <td>1.55</td>
+                </tr>
+                <tr style="border: black solid 2px">
+                    <th>
+                        Peak velocity pressure q<sub>p(z)</sub>
+                    </th>
+                    <td>
+                        475.1
+                        <span class="unit">
+                            N/m<sup>2</sup>
+                        </span>
+                    </td>
+                    <td>
+                        978.9
+                        <span class="unit">
+                            N/m<sup>2</sup>
+                        </span>
+                    </td>
+                    <td>
+                        707.1
+                        <span class="unit">
+                            N/m<sup>2</sup>
+                        </span>
+                    </td>
+                    <td>
+                        546.7
+                        <span class="unit">
+                            N/m<sup>2</sup>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Peak wind velocity for Serviceability Limit States v<sub>p(z),SLS</sub>
+                    </th>
+                    <td>
+                        100.3<span class="unit">km/h</span>
+                    </td>
+                    <td>
+                        143.9<span class="unit">km/h</span>
+                    </td>
+                    <td>
+                        122.3<span class="unit">km/h</span>
+                    </td>
+                    <td>
+                        107.6<span class="unit">km/h</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Peak wind velocity for Ultimate Limit States v<sub>p(z),ULS</sub>
+                    </th>
+                    <td>
+                        122.8<span class="unit">km/h</span>
+                    </td>
+                    <td>
+                        176.3<span class="unit">km/h</span>
+                    </td>
+                    <td>
+                        149.8<span class="unit">km/h</span>
+                    </td>
+                    <td>
+                        131.7<span class="unit">km/h</span>
+                    </td>
+                </tr>
+            </table>
+            <span style="font-size: 0.65em">
+                <sup>*</sup>
+                The orography factor is calculated for a well individualized obstacle (an emergent zone compared to a general ground without marked relief)
+            </span>
+        </div>
+        <h2>
+            C3 - Seism 
+            <span class="standard_reference">
+                <a href="https://www.legifrance.gouv.fr/affichCodeArticle.do?idArticle=LEGIARTI000030066108&cidTexte=LEGITEXT000006074220" rel="noreferrer, nofollow, noopener" target="_blank">Code of the Environment - Article D563-8-1 (09/01/2015)</a>
+                + <a href="https://www.legifrance.gouv.fr/eli/arrete/2010/10/22/DEVP1015475A/jo/texte" rel="noreferrer, nofollow, noopener" target="_blank">JORF n°0248 of 24/10/2010 text N°5</a>
+            </span>
+        </h2>
+        <div class="resultDiv">
+            <div style="float: left; margin-right: 2em;">
+                <label style="width: 5em">Zone :</label>
+                <span>2</span>
+                <span style="font-size: small">
+                    (0.7
+                    <span class="unit">
+                        m/s<sup>2</sup>
+                    </span>
+                    )
+                </span>
+            </div>
+            <div style="display: inline-block; font-size: small; padding-bottom: 0.4em">
+                <label style="width: auto">Criteria for zoning :</label>
+                <span>
+                    <span>Theoule-sur-Mer</span>
+                    , <span>Alpes-Maritimes</span>
+                    (<span>06</span>
+                    ) 
+                </span>
+            </div>
+            <div>
+                A seismic analysis may be required for this building. You can check if your building is concerned on <a href="https://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000022941755" rel="noreferrer, nofollow, noopener" target="_blank">LEGIFRANCE</a>
+                . 
+            </div>
+        </div>
+    </div>
+</div>
+<input type="button" value="Get the zones for a localisation using Eurocodes Zoning !" onclick="location.href='/en/eurocodes-zoning'" class="btn btn-primary btn-next no-print">
+</div><script async type="text/javascript" src="https://kit.fontawesome.com/2077bc9300.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/static/gen/global.js?35c77856"></script>
+<footer>
+    <div class="versionAndDesignerPosition" style="font-size: 0.6em; font-style: italic">
+        <span>
+            <a style="color: white" href="/en/eurocodes-zoning-versions" target="_blank" rel="noopener">Show versions</a>
+            - &copy;Copyright 2018-2023 
+        </span>
+        - 
+        <span>
+            <a style="color: white" href="/en/author-of-this-online-service" target="_blank" rel="noopener">St &eacute;phane PERRIN</a>
+        </span>
+        - 
+        <span>
+            <a style="color: white" href="/en/legal-notices-GTU" target="_blank" rel="noopener">Legal notices / GTU</a>
+        </span>
+    </div>
+</footer>
+</body></html>

@@ -1215,7 +1215,8 @@ body {
   .container_logo_part {
     width: 100%;
     max-width: 1440px;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     margin-top: 40px;
     display: flex;
   }
@@ -1795,6 +1796,83 @@ body {
     margin-bottom: 20px;
     box-shadow: 0 -5px 6px rgba(0, 0, 0, .2), 0 5px 6px rgba(0, 0, 0, .2);
   }
+
+
+
+  /* Logos Animations */
+  /* body {
+    align-items: center;
+    background: #e3e3e3;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+  } */
+  
+  @-webkit-keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-270px * 15));
+    }
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-250px * 15));
+    }
+  }
+  .slider {
+    background: white;
+    /* box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125); */
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    /* width: 1200px; */
+  }
+  .slider::before, .slider::after {
+    background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 100px;
+    z-index: 2;
+  }
+  .slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+  .slider::before {
+    left: 0;
+    top: 0;
+  }
+  .slider .slide-track {
+    -webkit-animation: scroll 50s linear infinite;
+            animation: scroll 50s linear infinite;
+    display: flex;
+    width: calc(250px * 18);
+  }
+
+  .slider .slide {
+    height: 100px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .slider .slide > a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 10px;
+    margin-right: 10px; */
+  }
+
 
   @media screen and (max-width: 1300px) {
 
@@ -2742,6 +2820,15 @@ body {
 
       .heading-4.pricing {
         font-size: 18px;
+      }
+
+      .slider::before, .slider::after {
+        /* background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+        content: "";
+        height: 100px;
+        position: absolute; */
+        width: 100px;
+        /* z-index: 2; */
       }
   }
 
