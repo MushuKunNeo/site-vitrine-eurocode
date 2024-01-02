@@ -405,6 +405,7 @@ body {
   
   .button.cc-jumbo-button {
     background-color: var(--primary_orange);
+    text-align: center;
     padding: 16px 35px;
     font-size: 14px;
     line-height: 26px;
@@ -514,9 +515,11 @@ body {
   }
   
   .intro-header.annexe {
-    height: 400px;
+    height: 500px;
     background-image: url('../images/Annexe_Page.webp');
     background-position: 50% 10%;
+    justify-content: flex-start;
+    flex-direction: column;
     background-size: cover;
     margin-top: 0;
     display: flex;
@@ -541,7 +544,7 @@ body {
   }
   
   .intro-content.cc-homepage.annexe {
-    padding-top: 40px;
+    padding-top: 100px;
   }
 
   .intro-text {
@@ -756,6 +759,7 @@ body {
 
   .heading_process.pricing {
     text-transform: uppercase;
+    font-size: 36px;
   }
 
   .divider {
@@ -1501,6 +1505,7 @@ body {
   }
 
   .div_title_pricing {
+    /* min-height: 300px; */
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     aspect-ratio: auto;
@@ -2079,13 +2084,17 @@ div.rightDiv{
       }
     
       .intro-header.annexe {
-        height: 500px;
+        height: 600px;
         background-image: url('../images/Annexe_Page.webp');
-        background-position: 50% 20%;
+        background-position: 50% 30%;
       }
 
       .intro-content.cc-homepage {
         padding-top: 140px;
+      }
+
+      .intro-content.cc-homepage.annexe {
+        padding-top: 120px;
       }
 
       /* SECTION White */
@@ -2268,7 +2277,7 @@ div.rightDiv{
     } 
 
     .navigation {
-        padding: 10px 30px;
+        padding: 0px 30px;
       }
     
       .navigation-item {
@@ -2304,8 +2313,28 @@ div.rightDiv{
         height: 650px;
       }
 
+      .intro-header.annexe {
+        height: 400px;
+        /* background-image: url('../images/Annexe_Page.webp'); */
+        background-position: 50% 0%;
+      }
+
+      .intro-content.cc-homepage.annexe {
+        padding-top: 100px;
+      }
+
+      .header_annexe{
+        font-size: 40px;
+      }
+
+      .logo.annexe{
+        height: 100px;
+        width: auto;
+      }
+
       .intro-text {
         width: auto;
+        font-size: 20px;
       }
 
       .heading_main {
@@ -2388,6 +2417,10 @@ div.rightDiv{
 
       .heading_process {
         font-size: 36px;
+      }
+
+      .heading_process.pricing{
+        font-size: 28px;
       }
 
       .divider {
@@ -2500,11 +2533,11 @@ div.rightDiv{
       }
 
       .wrapper_col_price, .subtitle_pricing {
-        font-size: 14px;
+        font-size: 18px;
       }
 
       .div_title_pricing {
-        min-height: 320px;
+        min-height: 300px;
         justify-content: space-around;
         padding-top: 20px;
         padding-bottom: 20px;
@@ -2534,7 +2567,7 @@ div.rightDiv{
       }
     
       .wrapper_col_price, .subtitle_pricing {
-        font-size: 14px;
+        font-size: 16px;
       }
 
       .div_picto_pricing {
@@ -2607,6 +2640,11 @@ div.rightDiv{
         min-width: 0;
       }
 
+      .accroche_annexe{
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+
   }
 
 
@@ -2619,7 +2657,7 @@ div.rightDiv{
     }
 
     .navigation {
-        padding: 10px 30px;
+        padding: 0px 30px;
       }
 
     .logo-link {
@@ -2630,6 +2668,39 @@ div.rightDiv{
 
     .intro-header {
         height: 600px;
+    }
+
+    .intro-header.annexe {
+      margin-top: 40px;
+      padding-top: 60px;
+      height: 400px;
+
+      /* background-image: url('../images/Annexe_Page.webp'); */
+      background-position: 50% 0%;
+      /* background-size: contain; */
+    }
+
+    .intro-content.cc-homepage.annexe {
+      padding-top: 0px;
+      /* display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center; */
+    }
+
+    .header_annexe{
+      font-size: 30px;
+      /* margin-top: 10px; */
+    }
+
+    .logo.annexe{
+      height: 90px;
+      width: auto;
+    }
+
+    .intro-text {
+      width: auto;
+      font-size: 14px;
     }
 
     .intro-content {
@@ -2693,6 +2764,12 @@ div.rightDiv{
 
       .heading_process {
         font-size: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .heading_process.pricing{
+        font-size: 20px;
       }
 
       .grid {
@@ -2798,6 +2875,11 @@ div.rightDiv{
         padding-left: 10px;
         padding-right: 10px;
         font-size: 20px;
+      }
+
+      .accroche_annexe{
+        padding-left: 20px;
+        padding-right: 20px;
       }
 
       .columns {
