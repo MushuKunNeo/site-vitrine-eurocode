@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="description" content="Eurocodes Tools" />
   <meta content="Index" property="og:title">
-  <title data-i18n="Seismic zones map - Italy"></title>
+  <title data-i18n="Eurocode 1 - probability factor cprob"></title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="css/index.css" rel="stylesheet" type="text/css">
   <link href="images/Logo EUROCODES TOOLS_favicon.svg" rel="shortcut icon" type="image/x-icon">
@@ -112,7 +112,7 @@
         <div class="intro-header annexe">
             <div class="intro-content cc-homepage annexe"><img src="images/Logo-EUROCODES-TOOLS.png" loading="lazy" width="400" alt="" class="logo annexe">
                 <div class="intro-text">
-                    <h1 class="header_annexe" data-i18n="Seismic zones map - Italy"></h1>
+                    <h1 class="header_annexe" data-i18n="Eurocode 1 - probability factor cprob"></h1>
                 </div>
             </div>
         </div>
@@ -128,31 +128,235 @@
         <div class="w-layout-blockcontainer container_bleu large w-container reveal">
           <div class="w-layout-blockcontainer container-frame-top large w-container"></div>
           <div class="container fond_bleu display">
-            <h3 class="heading-jumbo-small white left" data-i18n="What are the Italian seismic zones according to Eurocode 8 ?"></h3>
+            <h3 class="heading-jumbo-small white left" data-i18n="What is the probability factor for ?"></h3>
             <div class="divider2 large underline"></div>
             <p class="paragraph-light white left">
-              <span data-i18n="The feature is not included in our software."></span>
-              <span data-i18n="If it interests you, send us your request (seismic map and regulations), we will develop it with and for you."></span>
+              <span data-i18n="The wind pressures are calculated relative to the average characteristic wind speed over 10 min with an annual probability of exceeding p = 0.02 (ie once every 50 years)."></span>
+              <!-- <span data-i18n=""></span> -->
             </p>
+
             <p class="paragraph-light white left">
-              <span data-i18n="You can get your PGA (horizontal peak ground acceleration) and Sa(spectral acceleration) data, according to the method given by the Italian annex to Eurocode 8 and the Decree 14/01/2008 on the technical standards of construction of the ministry of infrastructures , with these Interactive Seismic Hazard Maps : "></span>
-              <a href="http://esse1.mi.ingv.it/">http://esse1.mi.ingv.it/</a>
+              <span data-i18n="When the design working life of a building is les or more than 50 years, you have to use the probability factor "></span>
+              <span>c<sub>prob</sub></span>
+              <span data-i18n="to calculate the basic wind velocity "></span>
+              <span>v<sub>b</sub></span>
+              <span data-i18n="with a return period equivalent to the design working life of your building."></span>
             </p>
+
             <p class="paragraph-light white left">
-              <span data-i18n="The online help can be found here : "></span>
-              <a href="http://esse1-gis.mi.ingv.it/mps04_help_eng.html">http://esse1-gis.mi.ingv.it/mps04_help_eng.html</a>
+              <span id="vb"></span>
             </p>
 
-          <img src="images/EC_Zoning/Italian_Interactive_Seismic_Hazard_Tool.webp" loading="lazy" width="Auto" alt="" class="image-side nogap" style="align-self: self-start;">
+            <div class="list">
+              <span>v<sub>b0</sub></span>
+              <span data-i18n=" is the fundamental value of the basic wind velocity given by the maps in the national annexes."></span>
+            </div>
 
-          <p class="paragraph-light white left small" data-i18n="Italian Interactive Seismic Hazard Tool"></p>
+            <div class="list">
+              <span>c<sub>dir</sub></span>
+              <span data-i18n=" is the directionnal factor."></span>
+            </div>
 
-          <p class="paragraph-light white left" data-i18n="By adopting the same system, the same procedures, the same input elements used in the drafting of the new reference map of the seismic hazard in Italy, the maps for another 8 probabilities of excess in 50 years have been produced, thus making it possible to define the curves of hazard for each site of the calculation grid used."></p>
-          
+
+            <h3 class="heading-jumbo-small white left" data-i18n="How to calculate the probability factor ?"></h3>
+            <div class="divider2 large underline"></div>
+
+            <p class="paragraph-light white left">
+              <span id="cprob"></span>
+            </p>
+
+            <div class="list">
+              <span data-i18n="p is the annual probability of exceedence :"></span>
+              <span id="p"></span>
+            </div>
+
+            <div class="list">
+              <span data-i18n="dwl is the design working life, in years."></span>
+              <span data-i18n="It can be found by country in the tables below."></span>
+            </div>
+
+            <div class="list">
+              <span data-i18n="K is the shape parameter depending on the coefficient of variation of the extreme-value distribution."></span>
+            </div>
+
+            <div class="list">
+              <span data-i18n="n is the exponent."></span>
+            </div>
+
+
+            <h3 class="heading-jumbo-small white left" data-i18n="What is the design working life of a building ?"></h3>
+            <h4 class="subtitle_annexe" data-i18n="Belgium"></h4>
+
+            <table class="table-bordered resultsTable">
+              <tr>
+                  <th data-i18n="Design working life category" colspan="2"></th>
+                  <th data-i18n="Indicative design working life (years)"></th>
+                  <th data-i18n="Examples"></th>
+              </tr>
+              <tr>
+                  <th colspan="2">1</th>
+                  <td>
+                    <span data-i18n="from"></span>
+                    <span>2</span>
+                    <span data-i18n="to"></span>
+                    <span>10</span>
+                  </td>
+                  <!-- <td>{{ _('{from} to {to}').format(from=2, to=10) }}</td> -->
+                  <td>
+                    <span data-i18n="Temporary structures"></span>
+                    <sup>1</sup>
+                  </td>
+                  <!-- <td><a href="#Note_1"><sup>1</sup></a></td> -->
+              </tr>
+              <tr>
+                  <th colspan="2">2</th>
+                  <td>
+                    <span data-i18n="from"></span>
+                    <span>10</span>
+                    <span data-i18n="to"></span>
+                    <span>25</span>
+                  </td>
+                  <!-- <td>{{ _('{from} to {to}').format(from=10, to=25) }}</td> -->
+                  <td data-i18n="Replaceable structural parts"></td>
+              </tr>
+              <tr>
+                  <th colspan="2">3</th>
+                  <td>
+                    <span data-i18n="from"></span>
+                    <span>15</span>
+                    <span data-i18n="to"></span>
+                    <span>30</span>
+                  </td>
+                  <!-- <td>{{ _('{from} to {to}').format(from=15, to=30) }}</td> -->
+                  <td data-i18n="Agricultural and similar structures"></td>
+              </tr>
+              <tr>
+                  <th rowspan="3">4</th>
+                  <td>4a</td>
+                  <td>
+                    <span data-i18n="from"></span>
+                    <span>20</span>
+                    <span data-i18n="to"></span>
+                    <span>100</span>
+                  </td>
+                  <!-- <td>{{ _('{from} to {to}').format(from=20, to=100) }}</td> -->
+                  <td data-i18n="Chimneys, towers, masts, silos and tanks"></td>
+              </tr>
+              <tr>
+                  <td>4b</td>
+                  <td>50</td>
+                  <td data-i18n="Hoists (including overhead cranes), pipelines"></td>
+              </tr>
+              <tr>
+                  <td>4c</td>
+                  <td>100</td>
+                  <td data-i18n="Buildings: dwellings, collective equipment, offices"></td>
+              </tr>
+              <tr>
+                  <th colspan="2">5</th>
+                  <td>100</td>
+                  <td data-i18n="Monumental building structures, bridges, and other civil engineering structures"></td>
+              </tr>
+          </table>
+
+            <p class="paragraph-light white left">
+              <span data-i18n="Parameters used in the calculation of "></span>
+              <span>c<sub>prob</sub> : </span>
+              <span data-i18n="K=0,2 and n=0,5."></span>
+            </p>
+
+            
+            <!-- <h3 class="heading-jumbo-small white left" data-i18n=""></h3> -->
+            <h4 class="subtitle_annexe" data-i18n="France"></h4>
+
+            <table class="table-bordered resultsTable">
+              <tr>
+                  <th data-i18n="Design working life category"></th>
+                  <th data-i18n="Indicative design working life (years)"></th>
+                  <th data-i18n="Examples"></th>
+              </tr>
+              <tr>
+                  <th>1</th>
+                  <td>10</td>
+                  <td>
+                    <span data-i18n="Temporary structures"></span>
+                    <sup>1</sup>
+                  </td>
+              </tr>
+              <tr>
+                  <th>2</th>
+                  <td>25</td>
+                  <td data-i18n="Replaceable structural parts, e.g. gantry girders, bearings"></td>
+              </tr>
+              <tr>
+                  <th>3</th>
+                  <td>25</td>
+                  <td data-i18n="Agricultural and similar structures"></td>
+              </tr>
+              <tr>
+                  <th>4</th>
+                  <td>50</td>
+                  <td data-i18n="Building structures and other common structures"></td>
+              </tr>
+              <tr>
+                  <th>5</th>
+                  <td>100</td>
+                  <td data-i18n="Monumental building structures, bridges, and other civil engineering structures"></td>
+              </tr>
+          </table>
+            
           <p class="paragraph-light white left">
-            <span data-i18n="As for the new seismic hazard reference map in Italy, the same logic tree approach, same procedures and same input data have been adopted for releasing maps for further 8 probability of exceedance in 50 years."></span>
-            <span data-i18n="In such a way, hazard curves for each node in the reference grid are now available."></span>
+            <span data-i18n="Parameters used in the calculation of "></span>
+            <span>c<sub>prob</sub> : </span>
           </p>
+            
+            <div class="list" >
+              <span data-i18n="0.02 < p : K=0.15 and n=0.5"></span>
+            </div>
+            <div class="list" >
+              <span data-i18n="p < 0.02 : K=0.20 and n=0.5"></span>
+            </div>
+
+
+            <!-- <h3 class="heading-jumbo-small white left" data-i18n=""></h3> -->
+            <h4 class="subtitle_annexe" data-i18n="Italy"></h4>
+
+            <table class="table-bordered resultsTable">
+              <tr>
+                  <th data-i18n="Design working life category"></th>
+                  <th data-i18n="Indicative design working life (years)"></th>
+                  <th data-i18n="Examples"></th>
+              </tr>
+              <tr>
+                  <th>1</th>
+                  <td>⩽ 10</td>
+                  <td>
+                    <span data-i18n="Temporary structures - Structures in construction phase"></span>
+                    <sup>1</sup>
+                  </td>
+              </tr>
+              <tr>
+                  <th>2</th>
+                  <td>⩾ 50</td>
+                  <td data-i18n="Building structures and other common structures (bridges, infrastructure works and dams small in size or of normal importance)"></td>
+              </tr>
+              <tr>
+                  <th>3</th>
+                  <td>⩾ 100</td>
+                  <td data-i18n="Monumental building structures, and other civil engineering structures (bridges, infrastructure works and dams large or of strategic importance)"></td>
+              </tr>
+          </table>
+          <p class="paragraph-light white left">
+            <span data-i18n="Parameters used in the calculation of "></span>
+            <span>c<sub>prob</sub> : </span>
+          </p>
+            
+            <div class="list" >
+              <span data-i18n="0.02 < p : K=0.20 and n=0.5"></span>
+            </div>
+            <div class="list" >
+              <span data-i18n="p < 0.02 : K=0.138 and n=1.0"></span>
+            </div>
           </div>
           <div class="w-layout-blockcontainer container-frame-bottom large w-container"></div>
         </div>

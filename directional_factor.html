@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="description" content="Eurocodes Tools" />
   <meta content="Index" property="og:title">
-  <title data-i18n="Seismic zones map - Italy"></title>
+  <title data-i18n="Eurocode 1 - directional factor cdir"></title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="css/index.css" rel="stylesheet" type="text/css">
   <link href="images/Logo EUROCODES TOOLS_favicon.svg" rel="shortcut icon" type="image/x-icon">
@@ -112,7 +112,7 @@
         <div class="intro-header annexe">
             <div class="intro-content cc-homepage annexe"><img src="images/Logo-EUROCODES-TOOLS.png" loading="lazy" width="400" alt="" class="logo annexe">
                 <div class="intro-text">
-                    <h1 class="header_annexe" data-i18n="Seismic zones map - Italy"></h1>
+                    <h1 class="header_annexe" data-i18n="Eurocode 1 - directional factor cdir"></h1>
                 </div>
             </div>
         </div>
@@ -128,31 +128,139 @@
         <div class="w-layout-blockcontainer container_bleu large w-container reveal">
           <div class="w-layout-blockcontainer container-frame-top large w-container"></div>
           <div class="container fond_bleu display">
-            <h3 class="heading-jumbo-small white left" data-i18n="What are the Italian seismic zones according to Eurocode 8 ?"></h3>
+            <h3 class="heading-jumbo-small white left" data-i18n="What is the directional factor for ?"></h3>
             <div class="divider2 large underline"></div>
             <p class="paragraph-light white left">
-              <span data-i18n="The feature is not included in our software."></span>
-              <span data-i18n="If it interests you, send us your request (seismic map and regulations), we will develop it with and for you."></span>
+              <span data-i18n="High velocities of wind are observed more frequently in some sectors directions;"></span>
+              <span data-i18n="the directional factor allows a reduction when the wind comes from a direction where the probability of occurrence of severe winds is lesser."></span>
+            </p>
+
+            <h3 class="heading-jumbo-small white left" data-i18n="How do the direction factor values apply ?"></h3>
+            <div class="divider2 large underline"></div>
+            <p class="paragraph-light white left">
+              <span data-i18n="« Wind direction » means the direction from which the wind comes."></span>
+              <span data-i18n="By convention, this direction is identified by the angle it forms with the North, increasing from 0° to 360° clockwise."></span>
             </p>
             <p class="paragraph-light white left">
-              <span data-i18n="You can get your PGA (horizontal peak ground acceleration) and Sa(spectral acceleration) data, according to the method given by the Italian annex to Eurocode 8 and the Decree 14/01/2008 on the technical standards of construction of the ministry of infrastructures , with these Interactive Seismic Hazard Maps : "></span>
-              <a href="http://esse1.mi.ingv.it/">http://esse1.mi.ingv.it/</a>
+              <span data-i18n="For the calculation of wind actions, only a few wind directions are considered;"></span>
+              <span data-i18n="for example the normal directions to the facades in the case of buildings."></span>
             </p>
+
+            <div class="list" >
+              <span data-i18n="In the case of buildings, the pressure coefficients given in the Section 7 of EN 1991-1-4 take account of this simplification of the procedure;"></span>
+              <span data-i18n="their values correspond to the most unfavorable direction of a so-called « nominal » angular sector of ±45° around the conventionally considered direction."></span>
+              <span data-i18n="Just as the standard requires, in 4.3.2 (3), to keep the roughness of the most unfavorable terrain in the nominal angular sector, it is advisable to use the most unfavorable directional factor of the directions contained in this sector."></span>
+            </div>
+            <div class="list" >
+              <span data-i18n="In other cases, in particular when the construction has been the subject of a specific study, in a wind tunnel or by digital simulation, exploring all the wind directions in 20° or 30° steps, the most unfavorable directional factor of the directions contained in the sector of ±15° around the direction considered should be used."></span>
+            </div>
+
+            <h3 class="heading-jumbo-small white left" data-i18n="What are the directional factor values ?"></h3>
+            <h4 class="subtitle_annexe" data-i18n="Belgium"></h4>
             <p class="paragraph-light white left">
-              <span data-i18n="The online help can be found here : "></span>
-              <a href="http://esse1-gis.mi.ingv.it/mps04_help_eng.html">http://esse1-gis.mi.ingv.it/mps04_help_eng.html</a>
+              <span data-i18n="In Belgium, you can use the values of "></span>&nbsp;
+              <span>c<sub>dir</sub></span>
+              <span data-i18n="defined by the table below."></span>
             </p>
 
-          <img src="images/EC_Zoning/Italian_Interactive_Seismic_Hazard_Tool.webp" loading="lazy" width="Auto" alt="" class="image-side nogap" style="align-self: self-start;">
+            <table class="resultsTable table-bordered">
+              <tr>
+                  <th data-i18n="Wind direction"></th>
+                  <td style="background: #888888;">
+                    <span>0° (</span>
+                    <span data-i18n="North"></span>
+                    <span>)</span>
+                  </td>
+                  <!-- <td class="blue_text" style="background: #888888; color: white">0<span class="unit">°</span><br/>({{ _("North") }})</td> -->
+                  <td>22.5<span class="unit">°</span></td>
+                  <td>37.75<span class="unit">°</span></td>
+                  <td>45<span class="unit">°</span></td>
+                  <td>56.25<span class="unit">°</span></td>
+                  <td style="background: #888888;">
+                    <span>90° (</span>
+                    <span data-i18n="East"></span>
+                    <span>)</span>
+                  </td>
+                  <!-- <td class="blue_text" style="background: #888888; color: white">90<span class="unit">°</span><br/>({{ _("East") }})</td> -->
+                  <td>120<span class="unit">°</span></td>
+                  <td>150<span class="unit">°</span></td>
+                  <td style="background: #888888;">
+                    <span>180° (</span>
+                    <span data-i18n="South"></span>
+                    <span>)</span>
+                  </td>
+                  <!-- <td class="blue_text" style="background: #888888; color: white">180<span class="unit">°</span><br/>({{ _("South") }})</td> -->
+                  <td style="background: #888888;">
+                    <span>270° (</span>
+                    <span data-i18n="West"></span>
+                    <span>)</span>
+                  </td>
+                  <!-- <td class="blue_text" style="background: #888888; color: white">270<span class="unit">°</span><br/>({{ _("West") }})</td> -->
+              </tr>
+              <tr>
+                  <th>
+                    <span data-i18n="Directional factor"></span>&nbsp;
+                    <span>c<sub>dir</sub></span>
+                  </th>
+                  <!-- <th>{{ _("") }} c<sub>dir</sub></th> -->
+                  <td style="background: #888888">1.0</td>
+                  <td>1.0</td>
+                  <td>0.95</td>
+                  <td>0.90</td>
+                  <td>0.85</td>
+                  <td style="background: #888888">0.85</td>
+                  <td>0.90</td>
+                  <td>0.95</td>
+                  <td style="background: #888888">1.0</td>
+                  <td style="background: #888888">1.0</td>
+              </tr>
+          </table>
 
-          <p class="paragraph-light white left small" data-i18n="Italian Interactive Seismic Hazard Tool"></p>
+            <h4 class="subtitle_annexe" data-i18n="France"></h4>
+            <p class="paragraph-light white left">
+              <span data-i18n="In Metropolitan France, you can use the values of "></span>&nbsp;
+              <span>c<sub>dir</sub></span>
+              <span data-i18n="defined by the map below, provided that the nominal angular sector including the wind directions associated with the pressure or force coefficients used in the calculations, is entirely contained by the interval."></span>
+            </p>
 
-          <p class="paragraph-light white left" data-i18n="By adopting the same system, the same procedures, the same input elements used in the drafting of the new reference map of the seismic hazard in Italy, the maps for another 8 probabilities of excess in 50 years have been produced, thus making it possible to define the curves of hazard for each site of the calculation grid used."></p>
-          
-          <p class="paragraph-light white left">
-            <span data-i18n="As for the new seismic hazard reference map in Italy, the same logic tree approach, same procedures and same input data have been adopted for releasing maps for further 8 probability of exceedance in 50 years."></span>
-            <span data-i18n="In such a way, hazard curves for each node in the reference grid are now available."></span>
-          </p>
+            <table class="resultsTable table-bordered">
+              <tr>
+                  <th data-i18n="Zone"></th>
+                  <th class="blue_text" style="background: #00ff00">1</th>
+                  <th class="blue_text" style="background: yellow">2</th>
+                  <th class="blue_text" style="background: orange">3</th>
+              </tr>
+              <tr>
+                  <th data-i18n="Nominal angular sector included in the interval (North at 0°)"></th>
+                  <td class="blue_text" style="background: #00ff00">10<span class="unit">°</span> - 150<span class="unit">°</span></td>
+                  <td class="blue_text" style="background: yellow">70<span class="unit">°</span> - 150<span class="unit">°</span></td>
+                  <td class="blue_text" style="background: orange">50<span class="unit">°</span> - 250<span class="unit">°</span></td>
+              </tr>
+              <tr>
+                  <th>
+                    <span data-i18n="Directional factor"></span>&nbsp;
+                    <span>c<sub>dir</sub></span>
+                  </th>
+                  <td class="blue_text" style="background: #00ff00">0.7</td>
+                  <td class="blue_text" style="background: yellow">0.7</td>
+                  <td class="blue_text" style="background: orange">0.85</td>
+              </tr>
+          </table>
+
+          <img src="images/EC_Zoning/CdirMap_FR.webp" class="image-side nogap" style="align-self: self-start;">
+
+            <p class="paragraph-light white left small">
+              <span data-i18n="Zoning map of the directional factor of Metropolitan France (2011-2024)"></span>
+            </p>
+
+            <p class="paragraph-light white left">
+              <span data-i18n="The rotary nature of tropical cyclones which affect certain Overseas Departments does not allow any reduction for the effect of management in these departments."></span>
+            </p>
+
+            <h4 class="subtitle_annexe" data-i18n="Italy"></h4>
+            <p class="paragraph-light white left">
+              <span data-i18n="In Italy, the recommended value is 1.0 (no reduction is allowed)."></span>
+            </p>
           </div>
           <div class="w-layout-blockcontainer container-frame-bottom large w-container"></div>
         </div>

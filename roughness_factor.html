@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="description" content="Eurocodes Tools" />
   <meta content="Index" property="og:title">
-  <title data-i18n="Seismic zones map - Italy"></title>
+  <title data-i18n="Eurocode 1 - roughness factor cr(z)"></title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="css/index.css" rel="stylesheet" type="text/css">
   <link href="images/Logo EUROCODES TOOLS_favicon.svg" rel="shortcut icon" type="image/x-icon">
@@ -112,7 +112,7 @@
         <div class="intro-header annexe">
             <div class="intro-content cc-homepage annexe"><img src="images/Logo-EUROCODES-TOOLS.png" loading="lazy" width="400" alt="" class="logo annexe">
                 <div class="intro-text">
-                    <h1 class="header_annexe" data-i18n="Seismic zones map - Italy"></h1>
+                    <h1 class="header_annexe" data-i18n="Eurocode 1 - roughness factor cr(z)"></h1>
                 </div>
             </div>
         </div>
@@ -128,31 +128,139 @@
         <div class="w-layout-blockcontainer container_bleu large w-container reveal">
           <div class="w-layout-blockcontainer container-frame-top large w-container"></div>
           <div class="container fond_bleu display">
-            <h3 class="heading-jumbo-small white left" data-i18n="What are the Italian seismic zones according to Eurocode 8 ?"></h3>
+            <h3 class="heading-jumbo-small white left" data-i18n="What is the roughness factor for ?"></h3>
             <div class="divider2 large underline"></div>
             <p class="paragraph-light white left">
-              <span data-i18n="The feature is not included in our software."></span>
-              <span data-i18n="If it interests you, send us your request (seismic map and regulations), we will develop it with and for you."></span>
+              <span data-i18n="The wind velocity is different depending on whether the building is on the coastline, in a forest or in a city center;"></span>
+              <span data-i18n="the roughness factor is used to model the influence of the building environment on the mean wind speed at a given height and on the turbulence intensity."></span>
             </p>
+
+            <h3 class="heading-jumbo-small white left" data-i18n="How to calculate the roughness factor ?"></h3>
+            <div class="divider2 large underline"></div>
+
             <p class="paragraph-light white left">
-              <span data-i18n="You can get your PGA (horizontal peak ground acceleration) and Sa(spectral acceleration) data, according to the method given by the Italian annex to Eurocode 8 and the Decree 14/01/2008 on the technical standards of construction of the ministry of infrastructures , with these Interactive Seismic Hazard Maps : "></span>
-              <a href="http://esse1.mi.ingv.it/">http://esse1.mi.ingv.it/</a>
+              <span data-i18n="First of all, the exposure factor method is only valid for a height up to "></span>
+              <span>z<sub>max</sub> = 200m; </span>&nbsp;
+              <span data-i18n="beyond this height, the effect of the wind must be specifically studied."></span>
             </p>
+
+            <p class="list">
+              <span data-i18n="The terrain factor "></span>
+              <span>k<sub>r</sub></span>
+              <span data-i18n="only depend of the roughness length "></span>
+              <span>z<sub>0</sub></span>
+              <span id="kr"></span>
+            </p>
+
+            <p class="list">
+              <span>z<sub>0,II</sub></span>
+              <span data-i18n="is the roughness length for the terrain category II."></span>
+            </p>
+
+            <p class="list">
+              <span data-i18n="The roughness factor "></span>
+              <span>c<sub>r</sub></span>
+              <span data-i18n=" at a given height z only depend of the roughness length "></span>
+              <span>z<sub>0</sub></span>
+              <span data-i18n=" but with the limitation "></span>
+              <span>z<sub>min</sub> ⩽ z ⩽ z<sub>max</sub></span>
+              <span id="crz"></span>
+            </p>
+
+
+
+
+            <h3 class="heading-jumbo-small white left" data-i18n="What are the terrain categories ?"></h3>
+            <div class="divider2 large underline"></div>
             <p class="paragraph-light white left">
-              <span data-i18n="The online help can be found here : "></span>
-              <a href="http://esse1-gis.mi.ingv.it/mps04_help_eng.html">http://esse1-gis.mi.ingv.it/mps04_help_eng.html</a>
+              <span data-i18n="The Eurocode provides five terrain categories with which values are associated:"></span>
+            </p>
+            <div class="list" >
+              <span>z<sub>0</sub></span>
+              <span data-i18n="is the roughness length in meters corresponding to the height at which the theoretical wind speed would become zero."></span>
+            </div>
+            <div class="list" >
+              <span>z<sub>min</sub></span>
+              <span data-i18n="is the minimum height in meters corresponding to the threshold below which the pressure no longer reduces."></span>
+            </div>
+
+            <table class="table-bordered resultsTable">
+              <tr>
+                  <th data-i18n="Terrain category" colspan=2>{{ _('') }}</th>
+                  <th>z<sub>0</sub> (m)</th>
+                  <th>z<sub>min</sub> (m)</th>
+              </tr>
+              <tr>
+                  <th>0</th>
+                  <td data-i18n="Sea, coastal area exposed to the open sea">{{ _('') }}</td>
+                  <td>0.003</td>
+                  <td>1</td>
+              </tr>
+              <tr>
+                  <th>I</th>
+                  <td data-i18n="Lakes or area with negligible vegetation and without obstacles">{{ _('') }}</td>
+                  <td>0.01</td>
+                  <td>1</td>
+              </tr>
+              <tr>
+                  <th>II</th>
+                  <td data-i18n="Area with low vegetation such as grass and isolated obstacles (trees, buildings) with separations of at least 20 obstacle heights">{{ _('') }}</td>
+                  <td>0.05</td>
+                  <td>2</td>
+              </tr>
+              <tr>
+                  <th>III</th>
+                  <td data-i18n="Area with regular cover of vegetation or buildings or with isolated obstacles with separations of maximum 20 obstacle heights (such as villages, suburban terrain, permanent forest)">{{ _('') }}</td>
+                  <td>0.3</td>
+                  <td>5</td>
+              </tr>
+              <tr>
+                  <th>IV</th>
+                  <td data-i18n="Area in which at least 15%% of the surface is covered with buildings and their average height exceeds 15m">{{ _('') }}</td>
+                  <td>1.0</td>
+                  <td>10</td>
+              </tr>
+          </table>
+
+            <p class="paragraph-light white left">
+              <span data-i18n="These terrain categories, the values associated with them and the distance over which they are evaluated can be adapted for each country in their respective national annexes."></span>
             </p>
 
-          <img src="images/EC_Zoning/Italian_Interactive_Seismic_Hazard_Tool.webp" loading="lazy" width="Auto" alt="" class="image-side nogap" style="align-self: self-start;">
+            <p class="paragraph-light white left">
+              <span data-i18n="The terrain categories must be observed for each wind direction."></span>
+            </p>
 
-          <p class="paragraph-light white left small" data-i18n="Italian Interactive Seismic Hazard Tool"></p>
+            <p class="paragraph-light white left">
+              <span data-i18n="For a building with a rectangular base, the surrounding space can for example be divided into 4 sectors of 90° (-45° to + 45° compared to normal to the walls of the building)."></span>
+            </p>
 
-          <p class="paragraph-light white left" data-i18n="By adopting the same system, the same procedures, the same input elements used in the drafting of the new reference map of the seismic hazard in Italy, the maps for another 8 probabilities of excess in 50 years have been produced, thus making it possible to define the curves of hazard for each site of the calculation grid used."></p>
-          
-          <p class="paragraph-light white left">
-            <span data-i18n="As for the new seismic hazard reference map in Italy, the same logic tree approach, same procedures and same input data have been adopted for releasing maps for further 8 probability of exceedance in 50 years."></span>
-            <span data-i18n="In such a way, hazard curves for each node in the reference grid are now available."></span>
-          </p>
+            <p class="paragraph-light white left">
+              <span data-i18n="Eurocode 1 part 1-4 indicates that the terrain must be observed at an angle of 30°, for each of the angular sectors of 90° it will therefore be necessary to observe the category of terrain on a slippery portion of 30°."></span>
+            </p>
+
+            <p class="paragraph-light white left">
+              <span data-i18n="The lowest roughness length within any 30° angular wind sector should be used and small areas (less than 10%% of the area under consideration) with deviating roughness may be ignored."></span>
+            </p>
+
+
+            <h3 class="heading-jumbo-small white left" data-i18n="Belgium"></h3>
+            <div class="divider2 large underline"></div>
+            <p class="paragraph-light white left">
+              <a href="zone_wind_belgium.html" data-i18n="See the five belgian terrain categories (0, I, II, III, IV)."></a>
+            </p>
+
+            <h3 class="heading-jumbo-small white left" data-i18n="France"></h3>
+            <div class="divider2 large underline"></div>
+            <p class="paragraph-light white left">
+              <a href="zone_wind_france.html" data-i18n="See the five french terrain categories (0, II, IIIa, IIIb, IV)."></a>
+            </p>
+
+            <h3 class="heading-jumbo-small white left" data-i18n="Italy"></h3>
+            <div class="divider2 large underline"></div>
+            <p class="paragraph-light white left">
+              <a href="zone_wind_italy.html" data-i18n="See the four italian terrain categories (A, B, C, D)."></a>
+            </p>
+
           </div>
           <div class="w-layout-blockcontainer container-frame-bottom large w-container"></div>
         </div>

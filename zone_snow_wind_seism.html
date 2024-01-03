@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="description" content="Eurocodes Tools" />
   <meta content="Index" property="og:title">
-  <title>Eurocodes Tools Template</title>
+  <title data-i18n="Zones for snow, wind and seism"></title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="css/index.css" rel="stylesheet" type="text/css">
   <link href="images/Logo EUROCODES TOOLS_favicon.svg" rel="shortcut icon" type="image/x-icon">
@@ -195,8 +195,11 @@
                 <h3 class="heading-jumbo-small white left" data-i18n="Why calculate peak velocity pressure by wind direction ?"></h3>
                 <div class="divider2 large underline"></div>
                 <p class="paragraph-light white left" data-i18n="The wind direction is to be considered for several reasons :"></p>
-                <div class="list" data-i18n="First, the high velocities of wind are observed more frequently in certain direction sectors;"></div>
-                <div class="list" data-i18n="the directional factor accounts for this by authorizing a reduction when the wind comes from a direction where the probability of occurrence of strong winds is less."></div>
+                <div class="list">
+                  <span data-i18n="First, the high velocities of wind are observed more frequently in certain direction sectors;"></span>
+                  <span data-i18n="the directional factor accounts for this by authorizing a reduction when the wind comes from a direction where the probability of occurrence of strong winds is less."></span>
+                </div>
+                <!-- <div class="list" data-i18n=""></div> -->
                 <div class="list" data-i18n="On the other hand, the orography and the roughness of the terrain generally vary with the direction of the wind."></div>
                 <div class="list" data-i18n="Finally, the pressure or force coefficients depend on the direction of the wind relative to the construction."></div>
 
@@ -209,8 +212,24 @@
                 </p>
                 <div class="list" data-i18n="the wind zone according to the map taken from the national annex to the Eurocode 1 part 1-4."></div>
                 <div class="list" >
-                  <span data-i18n="the directional factor c"></span><sub>dir</sub>
+                  <a href="directional_factor.html" data-i18n="the directional factor"> </a><span>&nbsp;c<sub>dir</sub></span>
                 </div>
+                <div class="list" >
+                  <a href="probability_factor.html" data-i18n="the annual probability of exceedence"></a>
+                  <span data-i18n=" by calculating the basic wind velocity "></span>
+                  <span>&nbsp;v<sub>b</sub></span>
+                  <span data-i18n="with a return period equivalent to the design working life of your building."></span>
+                </div>
+                <div class="list" >
+                  <a href="roughness_factor.html" data-i18n="the roughness factor"> </a><span>&nbsp;C<sub>r(z)</sub></span>
+                  <span data-i18n=", to take into account the effect of the environment (vegetation / urbanization)."></span>
+                </div>
+                <div class="list" >
+                  <a href="orography_factor.html" data-i18n="the orography factor"> </a><span>&nbsp;c<sub>o(z)</sub></span>
+                  <span data-i18n=", to take in account the effect of terrain relief."></span>
+                </div>
+
+
                 <p class="paragraph-light white left">
                   <span data-i18n="Then you can calculate the wind peak velocity pressure:"></span>
                   <span id="qpz"></span>

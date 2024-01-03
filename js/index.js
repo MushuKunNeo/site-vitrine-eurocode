@@ -277,4 +277,34 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
     }
 
+    if(document.getElementById('cprob')){
+        katex.render("\\displaystyle c_{prob} = \\left( \\frac{ 1 - K \\cdot \\ln(-\\ln(1-p)) } { 1 - K \\cdot \\ln(-\\ln(0.98)) } \\right) ^{n}", document.getElementById('cprob'), {
+            throwOnError: false
+        });
+    }
+
+    if(document.getElementById('kr')){
+        katex.render("\\displaystyle k_{r} = 0.19 \\cdot \\left( \\frac{z_{0}}{z_{0,II}} \\right)^{0.07}", document.getElementById('kr'), {
+            throwOnError: false
+        });
+    }
+
+    if(document.getElementById('crz')){
+        katex.render("\\displaystyle c_{r(z)} = k_{r} \\cdot \\ln{\\frac{z}{z_{0}}}", document.getElementById('crz'), {
+            throwOnError: false
+        });
+    }
+
+    if(document.getElementById('coz')){
+        katex.render("\\displaystyle c_{o(z)} = 1 + 0.004 \\cdot \\left( A_{c} - A_{m} \\right) \\cdot e^{-0.014 \\cdot \\max{(0, z - 10)}}", document.getElementById('coz'), {
+            throwOnError: false
+        });
+    }
+
+    if(document.getElementById('Am')){
+        katex.render("\\displaystyle A_{m} = \\frac{2 \\cdot A_{c} + \\sum_{i} \\left( A_{i,500} + A_{i,1000} \\right)}{10}", document.getElementById('Am'), {
+            throwOnError: false
+        });
+    }
+
   });
