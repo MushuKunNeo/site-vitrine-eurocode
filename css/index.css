@@ -1713,6 +1713,7 @@ body {
   .div_title_pricing.token {
     padding-top: 40px;
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: flex-start;
     /* background-color: white; */
@@ -1737,16 +1738,9 @@ body {
     height: max-content;
     align-items: stretch;
     margin-bottom: auto;
-    /* grid-column-gap: 16px;
-    grid-row-gap: 0px;
-    grid-template: "."
-                   "."
-                   "."
-                   / 1fr 1fr 1fr 1fr 1fr;
-    grid-auto-columns: 1fr;
-    grid-auto-flow: row; */
     justify-content: stretch;
     display: flex;
+    flex-direction: row;
   }
 
   .container_annexe {
