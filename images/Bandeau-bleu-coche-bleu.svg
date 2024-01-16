@@ -7,8 +7,8 @@
    x="0px"
    y="0px"
    width="595"
-   height="144.45"
-   viewBox="0 0 594.99997 144.45"
+   height="81.309998"
+   viewBox="0 0 594.99997 81.309999"
    xml:space="preserve"
    sodipodi:docname="Bandeau-bleu-coche-bleu.svg"
    inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
@@ -25,9 +25,9 @@
    inkscape:pageopacity="0"
    inkscape:pagecheckerboard="0"
    inkscape:deskcolor="#505050"
-   inkscape:zoom="1.7151592"
-   inkscape:cx="228.55022"
-   inkscape:cy="-35.85673"
+   inkscape:zoom="2.4256014"
+   inkscape:cx="351.2531"
+   inkscape:cy="71.116384"
    inkscape:window-width="2560"
    inkscape:window-height="1369"
    inkscape:window-x="1912"
@@ -40,11 +40,20 @@
 	.st0{fill:#153E8C;}
 </style>
 <g
-   id="BACKGROUND">
-</g>
+   id="BACKGROUND"
+   inkscape:label="BACKGROUND"
+   inkscape:highlight-color="#ffffff"
+   style="fill:#ffffff;fill-opacity:1">
+<rect
+   style="fill:#ffffff;fill-opacity:1;stroke-width:9.41801"
+   id="rect1"
+   width="595"
+   height="13.643515"
+   x="2.2541455e-09"
+   y="0" /></g>
 <g
    id="OBJECTS"
-   transform="scale(0.99947926,1)">
+   transform="matrix(0.99947926,0,0,1,0,-40.09)">
 	<path
    class="st0"
    d="m 0,40.09 v 67.71 h 491.72 l 31.26,13.6 31.12,-13.6 h 41.21 V 40.09 Z"

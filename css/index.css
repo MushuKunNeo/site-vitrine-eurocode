@@ -610,17 +610,32 @@ body {
 
   .container-frame-top {
     width: 100%;
-    height: 80px;
+    height: 100px;
     max-width: 1920px;
     background-image: url('../images/Bandeau-bleu-coche-blanche.svg');
-    background-position: 50%;
+    background-position: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: -20px;
+    margin-bottom: -40px;
   }
 
   .container-frame-top.small {
     background-position: 100%;
+  }
+
+  .container-frame-top.large{
+    height: 200px;
+    /* margin-bottom: -100px; */
+  }
+
+  .container-frame-top.central{
+    height: 120px;
+    margin-bottom: -20px;
+  }
+
+  .container-frame-top.side-colunm{
+    height: 120px;
+    margin-bottom: -20px;
   }
 
   .container {
@@ -726,21 +741,48 @@ body {
   }
 
   .container-frame-bottom {
-    z-index: 1;
+    /* z-index: 1; */
     width: 100%;
-    height: 80px;
+    min-height: 40px;
     max-width: 1920px;
+    /* background-color: var(--primary_blue); */
     background-image: url('../images/Bandeau-bleu-coche-bleu.svg');
-    background-position: 50% 100%;
+    background-position: 100% bottom;
     background-repeat: no-repeat;
     background-size: cover;
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    object-fit: cover;
+    -o-background-size: cover; */
     margin-top: -10px;
-    display: block;
-    position: relative;
+    /* display: block; */
+    /* position: relative; */
   }
 
+  /* .container-frame-bottom {
+    
+    height: 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: -40px;
+    padding-top: 0;
+  } */
+
   .container-frame-bottom.large {
-    background-position: 50% 80%;
+    /* background-position: 50% 100%; */
+    min-height: 20px;
+    /* margin-top: -10px; */
+  }
+
+  .container-frame-bottom.central{
+    height: 120px;
+    margin-top: -10px;
+  }
+
+  .container-frame-bottom.side-colunm{
+    /* height: 200px; */
+    /* margin-top: -60px; */
+    /* min-height: 10px; */
   }
 
   .container_grid {
@@ -814,6 +856,7 @@ body {
 
   .picto-animate {
     width: 100px;
+    box-shadow: none;
   }
 
   h2 {
@@ -2172,14 +2215,53 @@ p.italic{
         top: 60px;
       }
 
-      .container-frame-top {
+      .container-frame-top.small {
+        /* background-position: 100%; */
+      }
+    
+      .container-frame-top.large{
+        height: 200px;
+        /* margin-bottom: -100px; */
+      }
+    
+      .container-frame-top.central{
+        height: 120px;
+        /* margin-bottom: -20px; */
+      }
+    
+      .container-frame-top.side-colunm{
+        height: 100px;
+        /* margin-bottom: -40px; */
+      }
+
+      .container-frame-bottom.large {
+        z-index: 1;
+        /* background-position: 50% 100%; */
+        z-index:0;
+        height: 250px;
+        margin-top: -210px;
+      }
+    
+      .container-frame-bottom.central{
+        height: 120px;
+        margin-top: -10px;
+      }
+    
+      .container-frame-bottom.side-colunm{
+        height: 100px;
+        margin-top: -20px;
+      }
+
+
+
+
+      /* .container-frame-top {
         max-width: none;
-        margin-bottom: -10px;
       }
     
       .container-frame-top.small {
         margin-bottom: -20px;
-      }
+      } */
 
       .container {
         max-width: 800px;
@@ -2221,11 +2303,6 @@ p.italic{
       /* .paragraph-light {
         font-size: 24px;
       } */
-
-      .container-frame-bottom {
-        background-position: 50% 100%;
-        padding-top: 0;
-      }
 
       .container_grid {
         padding-left: 40px;
@@ -2463,6 +2540,12 @@ p.italic{
         margin-bottom: -20px;
       }
 
+      .container-frame-top.side-colunm {
+        margin-top: 40px;
+        /* height: 60px; */
+        /* margin-bottom: -20px; */
+      }
+
       .heading-jumbo-small.white {
         font-size: 28px;
       }
@@ -2479,10 +2562,22 @@ p.italic{
 
       .container-frame-bottom {
         margin-top: -30px;
+        background-size: cover;
       }
 
       .container-frame-bottom.central {
         height: 60px;
+        margin-top: 0;
+      }
+
+      .container-frame-bottom.large {
+        min-height: 80px;
+        margin-top: -70px;
+      }
+
+      .container-frame-bottom.side-colunm {
+        height: 100px;
+        /* width: fit-content; */
         margin-top: 0;
       }
 
