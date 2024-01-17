@@ -6,9 +6,9 @@
    id="Calque_1"
    x="0px"
    y="0px"
-   width="595"
-   height="81.309998"
-   viewBox="0 0 595 81.3"
+   width="103"
+   height="14"
+   viewBox="0 0 103 14"
    xml:space="preserve"
    sodipodi:docname="Bandeau-bleu-coche-bleu.svg"
    inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
@@ -40,14 +40,12 @@
 	.st0{fill:#153E8C;}
 </style>
 
-<g
-   id="OBJECTS"
-   transform="matrix(0.99947926,0,0,1,0,-40.09)">
+<g id="OBJECTS">
 	<path
    class="st0"
-   d="m 0,40 v 68 h 492 l 31,14 31,-14 h 41 V 40 Z"
+   d="m 0,0 l 31,14 31,-14 h -62 Z"
    id="path1"
-   inkscape:label="path1" />
+   />
 </g>
 <g
    id="Calque_3">
