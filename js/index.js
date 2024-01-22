@@ -1,5 +1,35 @@
 
 
+function includeHTML() {
+    var z, i, elmnt, file, xhttp;
+    /* Loop through a collection of all HTML elements: */
+    z = document.getElementsByTagName("div");
+    for (i = 0; i < z.length; i++) {
+      elmnt = z[i];
+      /*search for elements with a certain atrribute:*/
+      file = elmnt.getAttribute("include-html");
+      if (file) {
+        /* Make an HTTP request using the attribute value as the file name: */
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4) {
+            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+            /* Remove the attribute, and call this function once more: */
+            elmnt.removeAttribute("include-html");
+            includeHTML();
+          }
+        }
+        xhttp.open("GET", file, true);
+        xhttp.send();
+        /* Exit the function: */
+        return;
+      }
+    }
+  }
+
+
+
 function reveal() {
     var reveals = document.querySelectorAll(".reveal");
     for (var i = 0; i < reveals.length; i++) {
@@ -27,16 +57,6 @@ function reveal() {
 //     }
 // }
 
-
-var menu_button = document.getElementById("menu_button");
-
-var language_button = document.getElementById("Language_Button");
-var Display_language = document.getElementById("Display_language");
-
-var product_button = document.getElementById("Product_Button");
-
-var lanugage_dropdown = document.getElementsByClassName("locale-switcher")[0];
-var dropdown = document.getElementsByClassName("dropdown-list")[0];
 // menu_button.addEventListener("click", display_mobile_menu);
 
 window.addEventListener("scroll", reveal);
@@ -49,13 +69,26 @@ reveal();
 // When the user clicks anywhere outside of the modal, close it
 window.addEventListener('click', function(event) {
 
+    var menu_button = document.getElementById("menu_button");
+
+    var language_button = document.getElementById("Language_Button");
+    var Display_language = document.getElementById("Display_language");
+
+    var product_button = document.getElementById("Product_Button");
+
+    var lanugage_dropdown = document.getElementsByClassName("locale-switcher")[0];
+    var dropdown = document.getElementsByClassName("dropdown-list")[0];
+
     console.log(event.target);
     var mobile_menu = document.getElementById("Mobile_menu");
+    var mobile_overlay = document.getElementsByClassName("w-nav-overlay")[0];
 
     if ((event.target === menu_button || menu_button.contains(event.target)) && !mobile_menu.hasAttribute("data-nav-menu-open")) {
         mobile_menu.setAttribute("data-nav-menu-open", "1");
+        mobile_overlay.setAttribute("data-nav-menu-open", "1");
     }else{
         mobile_menu.removeAttribute("data-nav-menu-open");
+        mobile_overlay.removeAttribute("data-nav-menu-open");
     }
 
     if ((event.target === language_button || language_button.contains(event.target)) && !lanugage_dropdown.classList.contains("w--open")) {
@@ -133,6 +166,19 @@ const translatePage = () => {
     document
       .querySelectorAll("[data-i18n]")
       .forEach(translateElement);
+    console.log(history.state);
+    console.log(location.href);
+    tab_ref = location.href.split("/");
+    current_page = tab_ref[tab_ref.length - 1];
+    console.log(current_page);
+    if(locale === "fr"){
+        new_page = current_page + "/?lang=fr";
+    }
+    else if(locale === "en"){
+        new_page = current_page + "/?lang=en";
+    }
+    console.log(new_page);
+    history.pushState(null, null, new_page);
 }
 
 const translateElement = (element) => {
@@ -147,8 +193,19 @@ const translateElement = (element) => {
 }
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    console.log("DOM fully loaded and parsed");
+
+    includeHTML()
+    // .then(newResult => doThirdThing(newResult))
+    // .then(finalResult => {
+    //   console.log('The final result thing' + finalResult);
+    // })
+    // .catch(failureCallbackfunction);
+    // setTimeout(() => {
+        
+    //   }, 1000);
     setLocale(defaultLocale);
+    console.log("DOM fully loaded and parsed");
+    
     if(document.getElementById('qpz')){
         katex.render("\\displaystyle q_{p(z)} = \\left[ 1 + 7 \\cdot I_{v(z)}\\right] \\cdot \\frac{1}{2} \\cdot \\rho \\cdot v_{m(z)}^{2} = c_{e(z)} \\cdot q_{b} ", document.getElementById('qpz'), {
         throwOnError: false

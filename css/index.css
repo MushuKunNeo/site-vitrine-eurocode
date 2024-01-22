@@ -193,16 +193,10 @@ body {
   }
 
   [data-nav-menu-open] {
-    display: block !important;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: white;
-    text-align: center;
-    overflow: visible;
-    min-width: 200px;
+    display: none;
   }
+
+
   .w--nav-link-open {
     /* width: 100%; */
     display: block;
@@ -2443,9 +2437,21 @@ p.italic{
       display: block;
     }
 
-    #w-nav-overlay-0 {
+    [data-nav-menu-open] {
+      display: block !important;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      text-align: center;
+      overflow: visible;
+      min-width: 200px;
+    }
+
+    /* #w-nav-overlay-0 {
       display: block;
-    } 
+    }  */
 
     .navigation {
         padding: 0px 30px;
