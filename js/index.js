@@ -178,7 +178,7 @@ const translatePage = () => {
         new_page = current_page + "/?lang=en";
     }
     console.log(new_page);
-    history.pushState(null, null, new_page);
+    // history.pushState(null, null, new_page);
 }
 
 const translateElement = (element) => {
